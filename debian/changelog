@@ -1,0 +1,3093 @@
+vvvvvv (2.4.3-1) UNRELEASED; urgency=medium
+
+  [ computermouth ]
+  * Initial release. (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Add License Exception for cited Linux Distributions.
+  * Change the exception to just be for Debian, and point directly to packages.debian.org
+
+  [ Ethan Lee ]
+  * Hello WWWWWWorld!
+  * Link to SDL2/SDL2_mixer
+  * This used to be true!
+  * Clarify dev libs line
+  * Note location of data.zip
+  * Messagebox on missing data.zip
+  * Extra newline in data.zip message
+  * CMake might get fussy about relative paths, just use C:\ for the example
+  * Wait, people other than me used this folder for real?
+  * Use RPATH for lib folder, use PHYSFS_getBaseDir on all platforms.
+  * Invert the ifdef mess for getOSDirectory
+  * Use NULL instead of nullptr
+  * Linux can use -devel, unless their distro is super old
+  * Sneaky tabbing fix
+  * Fix warning emitted by GCC 4.8
+  * Make sure all PhysFS calls are after init!
+  * Create third_party folder, note it in the license text
+  * Adjust gitignore for new executable names
+  * Ignore .gch files
+  * Add note about Windows .lib weirdness
+  * Add support for multiple Network backends, stub in GOGNetwork
+  * Loose typedef
+  * This is a wild guess but I think I assigned init at some point
+  * int32_t > int
+  * Untested Haiku port?
+  * macOS builds also require self-built Vorbisfile
+  * Integrate dynamic list sizes for credited patrons, add CONTRIBUTORS to credits
+  * Add text outline as an accessibility option
+  * Load gamecontrollerdb.txt if available
+  * Fix invincibility/slowdown cursor positions when exiting those menus
+  * SDL_Init after FILESYSTEM_init, for gamecontrollerdb.txt
+  * Pull openDirectoryEnabled out of the openDirectory ifdefness
+  * Bools are hard...
+  * Check for GCC7 for implicit-fallthrough support
+  * Mention the in-game credits for the Legal Stuff
+  * Minor visual cleanup of endsWith
+  * Minor visual cleanup of reloadresources
+  * Whitespace consistency for FileSystemUtils
+  * Replace mkdir with PHYSFS_mkdir
+  * Like the thing I did but the opposite
+  * Avoid calling music.init on startup, reloadresources does this
+  * Revert "Fix unfocusing the game while in fullscreen mode"
+  * Fix fullscreen focus behavior
+  * Some sanity checks for BinaryBlob header data
+  * valid needs to have either exactly 1 or 0
+  * Disallow negative size values in BinaryBlob
+  * Maybe check the right size m8
+  * Sigh.
+  * Fix gamecontrollerdb.txt path
+  * Fix memset writing past bestframes
+  * Copypaste error for s_besttimes
+  * NULL checks for processVsync
+  * Timing fixes for processVsync recreation workaround
+  * Fix a couple spots where sizeof referred to array size
+  * Move the VSync work to Screen.
+  * Try to preserve the script args for createentity when using default args
+  * PHYSFS_mkdir uses the mount location when a system is mounted
+  * Check saves dir in addition to levels dir for migration
+  * Separate mkdirs from path string generation
+  * HACK: Disable VSync option for Haiku
+  * Refactor startup to load config before calling Screen::init
+  * More VSync Haiku hackery
+  * Haiku: Keep the option visible, but note the bug
+  * Set both filter and vsync hints with override priority
+  * Fall back to default settings when screenbuffer is not present
+  * mmmmmm is initialized earlier in init()
+  * Valgrind warning fix
+  * Warning fix for uninitialized prefix
+  * Ignore resize events for unfocused windows
+  * Visual Studio buildfix
+  * Fix a crash on first unfocus
+  * VS2010 buildfix
+  * Use SDL_GetBashPath instead of PHYSFS_getBaseDir, latter is made of fail on macOS
+  * Re-sync CONTRIBUTORS and GitHub Friends lists
+  * Fix leaking GetBasePath result
+  * Put Misa at the top of GitHub Friends
+  * Skip the icon on Apple targets, it also has the icns
+  * Only do focus fullscreen toggling on X11.
+  * Only migrate savedata if "saves" was created
+  * Revert "Only migrate savedata if "saves" was created", need this for levels too
+  * Revert to my old userdata folder creation code.
+  * Forgot a 0...
+  * Move first CreateDirectory to getOSDirectory, avoids redundancy on non-Win32
+  * Revert "Change final stretch song to Piercing the Sky"
+  * Music: Reset step_ms on every fade call.
+  * Music: Enforce the quick fade time as soon as we know it's happening.
+  * Reduce memory footprint in FILESYSTEM_mountAssets
+  * Fix loading levels that are... uh, just levels.
+  * When custom assets aren't mounted, unmount should be quiet
+  * Similar to unmountAssets, avoid printing a message when custom assets don't exist
+  * Embedded .ico
+  * Default to VSync being enabled
+  * Minor VS buildfix
+  * Added my quick script to fixup Mac dylib paths
+  * Updated .ico
+  * Remove unused MusicTrack constructor.
+  * Consolidate SoundSystem into Music.
+  * Inline SoundSystem into musicclass constructor
+  * Update docs for MusicTrack/SoundTrack
+  * Move the mute logic to musicclass.
+  * SDL_mixer is now entirely contained in Music.cpp.
+  * Isolate all SDL_mixer references to SoundTrack/MusicTrack.
+  * Move the Mix_OpenAudio call to SoundTrack, from MusicTrack.
+  * Remove unused m_isValid value from MusicTrack
+  * Add notes for FAudio implementation
+  * Move MusicTrack below SoundTrack.
+  * Point to SDL_LoadWAV for SoundTrack FAudio suggestion
+  * README: Minor adjustments to dependencies text
+  * Remove SDL2_mixer line from fixupMac.sh
+  * Remove SDL2_mixer dependencies from Dockerfile
+  * Controller layout detection
+  * Fix glyphs for 8BitDo Ultimate Wired Controller for Xbox
+  * Add 8BitDo wireless Xbox product ID to detector
+  * Handle WiiU/Switch GameCube adapter product ID
+  * VS2010 buildfixes.
+  * Add "type:" override check for virtual Sony gamepads.
+  * Steam now shares device info with SDL!
+  * Update PhysicsFS to 3.2.0
+  * Fix Switch button glyphs being double swapped
+  * Add support for GameCube glyphs.
+  * CI: Replace -o with -OutFile, works around Invoke-WebRequest regression
+  * CI: Migrate to SLR Sniper SDK for Linux builds
+  * CI: Remove CMake caching.
+  * CI: Move Sniper SDK from beta to latest.
+  * CMake: Use rpath, not runpath
+
+  [ Terry Cavanagh ]
+  * Update README.md
+  * Update README.md
+  * Update README.md
+  * Create License exceptions.md
+  * Added VVVVVV: Community Edition and VVVVVVwasm to License exceptions
+  * Update License exceptions.md
+  * Updated link to Make and Play edition
+  * Updated link to make and play edition
+  * Updated link to Make and Play edition
+  * Updated link to cursed_vvvvvv.exe, changed links to shortcuts
+  * Update License exceptions.md
+  * typo
+  * Added Ved to License exceptions
+  * Added a technicality I just realised, lol
+  * Added a general exception for any package of the Make and Play edition
+  * Added Haiku links
+  * Added License exception for Sega Dreamcast port
+  * Update License exceptions.md
+  * Update mobile version to mobile v2.2.1
+  * Update README.md
+  * Update LICENSE.md
+  * Update License exceptions.md
+  * Update LICENSE.md
+  * Update readme.MD
+  * Update readme.MD
+  * Update readme.MD
+  * added localisation credits to repo
+  * added translators to main readme
+  * Update README.md
+  * Added a link in the readme directly to the desktop_version folder
+  * Fixed broken table in License exceptions.md
+  * reverted note at end of desktop_version/Readme about data.zip and distribution
+  * updated credits to include the Eternal Dream Arabization team
+  * Added license exception for armhf Port
+  * typo
+  * added link to ARMHF port
+  * Added Wii port to License exceptions
+  * Added link to Wii port github in license exceptions
+  * Added license exception for Recalbox project
+  * Added PortMaster project to License exceptions
+
+  [ Christoph Böhmwalder ]
+  * actually return an error when data.zip is missing
+  * CONTRIBUTORS: add myself
+
+  [ Moonchild ]
+  * avoid segfault with bad, missing, or corrupted audio
+  * add myself to the contributors file, fix formatting
+  * Hide mouse cursor in game window
+
+  [ Emmanuel Vadot ]
+  * FreeBSD: Use the same path as Linux
+  * FreeBSD: Add workaround for libsteam
+  * Add myself to the CONTRIBUTORS.txt file.
+
+  [ Marvin Scholz ]
+  * Do not use deprecated PHYSFS_getUserDir on macOS
+  * Use PHYSFS_readBytes instead of deprecated PHYSFS_read
+  * CONTRIBUTORS: Add myself
+  * Add partial-availability error on macOS
+  * Add workaround for missing macOS 10.9 SDK
+  * Do not hardcode default macOS SDK path
+  * Use SDL_HasIntersection for UtilityClass::intersects
+  * Simplify std::vector initializations
+  * Simplify initializations
+
+  [ Rémi Verschelde ]
+  * FS: Use PHYSFS_getPrefDir on Linux/FreeBSD too
+  * Add .gitignore with build artifacts and data.zip
+  * CMake: Add ENABLE_WARNINGS and ENABLE_WERROR build options
+  * Fix warnings raised by GCC 8
+
+  [ Elliott Saltar ]
+  * Correct "seperately" to "separately"
+  * Add my name to the CONTRIBUTORS file (might want to change my GitHub username eventually...)
+
+  [ viri ]
+  * fix uninitialized member vars everywhere
+  * add viri to CONTRIBUTORS.txt
+  * fix actionscript misclassified as angelscript
+  * CONTRIBUTORS.txt: Update contact info
+
+  [ Daniel Lee ]
+  * some small menu fixes
+  * fix Victoria typo "scentists" in the Secret Lab
+  * CONTRIBUTORS: Add myself
+  * small indentation correction to match surrounding code
+
+  [ Charlie Bruce ]
+  * Revert C++11 code to older standard for improved compatibility
+  * On macOS, use default SDK if version 10.9 is not installed.
+  * Move PROJECT line after CMAKE_OSX_DEPLOYMENT_TARGET line
+  * Add myself to CONTRIBUTORS
+
+  [ Brian Callahan ]
+  * Add OpenBSD support
+
+  [ Info Teddy ]
+  * Fix hardreset() not resetting all 100 slots in (custom)collect (#36)
+  * Fix scaling editor mouse coords properly in stretch mode
+  * Add an accessibility option to toggle the fake loading screen (#63)
+  * Stop the game from freezing if we play a song during a fadeout (#61)
+  * Destroy duplicate player entities during gotoroom
+  * Re-add the font outline from the Flash/mobile versions
+  * Don't deactive tele prompt when dying
+  * Disable muting in the script editor
+  * Fix being able to set lower custom level score
+  * Fix mute button not working at all
+  * Fix the flipgravity() internal command (#78)
+  * Fix "Exausted?" typo in roomname
+  * Correct Warp Zone's area name from "Warpzone" to "Warp Zone"
+  * Properly reset roomdeaths and roomdeathsfinal in hardreset
+  * Fix warpdir() doing wrong BG with warp dir 0 in current room
+  * Prevent the game from thinking horizontal warp lines are cyan crewmates (#87)
+  * Correct capitalization of song names
+  * Don't render press ENTER to return to editor if advancetext is on
+  * Fix "Exausted?" and "scentists" typos in mobile version
+  * Fix off-by-one in script editor letting you type on a nonexistent line
+  * Fix frame-ordering backspacing empty line bug in script editor
+  * Set ed.keydelay when backspacing an empty line
+  * Reset Direct Mode in editorclass::reset()
+  * Don't play squeak twice when entering quickloadlevel
+  * Fix bug with displaying translucent pixels incorrectly
+  * Fix out-of-bounds array access in findstartpoint()
+  * Reset cutscene bar position in hardreset()
+  * Copy the backBuffer to the tempBuffer in towerrender()
+  * Reset game.pausescript in hardreset()
+  * Don't quick fade when using niceplay()
+  * Call nexttowercolour() when exiting to menu
+  * Reset enemy type in editorclass::reset()
+  * Fix X and Y coordinates getting reversed in editorclass::reset()
+  * Up the trinkets/crewmates limit to 100
+  * Abstract UtilityClass::number() to be more generic
+  * Make foundtrinket() be accurate in custommode
+  * De-duplicate the roomname printing code in the editor
+  * Convert roomname background to a surface, then draw that
+  * Add an accessibility option to be able to see through the roomname
+  * Draw room names with text outline
+  * Make fast path using FillRect() when opaque
+  * Move y-position assignment into its most intended branch
+  * Remove from M&P the room data of Final Level/Lab/Overworld/Tower
+  * Don't redraw H/V warp BG if gotorooming to same room in customs
+  * Allow using help/graphics/music/game/key/map/obj everywhere
+  * Reset warp directions when exiting playtesting
+  * Set customwarpmode when createentitying warp lines
+  * Fix text() centering with x=-1
+  * Make obj accessible from everywhere
+  * Fix hardcoded (19,8) all-sides warp happening in custom levels
+  * Fix Prize for the Reckless quicksand fix kludge
+  * Fix discoloration when entities warp in flip mode
+  * Account for height of textbox in flipme()
+  * Fix centered texts' outline rendering upside-down in flip mode
+  * Make hardest room "Dimension VVVVVV" if it has no room name
+  * Fix Prize for the Reckless moving platform kludge happening in customs
+  * Draw entities backwards in towermode like non-towermode entities
+  * Fix wrong tiling in top-left corner of Do Try To Keep Up
+  * Render screen shaking in towers
+  * Initialize level data with 0s in M&P
+  * Re-comment out #define MAKEANDPLAY
+  * Add and draw one more row to all rooms with roomnames
+
+  [ Wouter ]
+  * Fix Werror always being enabled
+  * Add myself to the contributor list
+
+  [ Keith Stellyes ]
+  * UtilityClass::number impl a bit cleaner
+  * Add self to CONTRIBUTORS
+
+  [ leo60228 ]
+  * Support symbolic links
+  * Add to CONTRIBUTORS.txt
+  * Add support for Unicode rendering (#47)
+  * Add -assets option to specify data.zip (#139)
+  * Implement command-line playtesting (#163)
+  * Add destructor for SoundTrack/MusicTrack (and explicitly define move constructor to prevent double-free)
+  * Clear soundTracks and musicTracks on musicclass::init
+  * Set C++ standard to C++98
+  * Revert "Add destructor for SoundTrack/MusicTrack (and explicitly define move constructor to prevent double-free)"
+  * Unstub ~GraphicsResources
+  * Find SDL_mixer.h instead of assuming it's in the same location as SDL.h
+  * Don't leak binaryBlob
+  * Don't leak sounds/music
+  * Don't leak flipbfont
+  * Fix some leaks
+  * Support hex entities in metadata
+  * Include SDL2 as system header
+  * Include math.h instead of cmath
+  * Use SDL_abs instead of std::abs
+  * Document SDL_abs vs. SDL_fabs
+  * Revert "Document SDL_abs vs. SDL_fabs"
+  * Use SDL_fabsf where std::abs was previously used
+  * Run CI on CentOS 7 (#574)
+  * Set SDL window as DPI-aware
+  * Use SDL_GetRendererOutputSize instead of SDL_GetWindowSize
+  * Consistently use Screen::GetWindowSize
+  * Use SDL_OpenURL in FILESYSTEM_openDirectory (#623)
+  * Support Emscripten's SDL2
+  * Support Emscripten in FileSystemUtils
+  * Add necessary Emscripten linker flags
+  * Use Emscripten's main loop
+  * Disable unfocus on Emscripten
+  * Explicitly use void in emscriptenloop declaration
+  * Treat __unix__ define as generic Unix
+  * Add physfsrwops
+  * Remove data/ from track name list, refactor music loading, and support loose ogg music
+  * Return false from unPackBinary if no tracks are valid
+  * Compile physfsrwops with VVVVVV because of SDL dependency
+  * Change physfsrwops.h SDL.h include, again
+  * Split flip logic from player input logic
+  * Split out tap_left and tap_right from player input loop
+  * Actually move checks out of loop
+  * Allow any player entity to be on the ground/roof to flip
+  * Fix indentation consistency
+  * Call FS.syncfs on Emscripten (#838)
+  * Only apply flip momentum to player entities on ground/roof
+  * Only execute flip logic when has_control
+  * Correct onground/onroof check
+  * Split Func_input and Func_delta when unfocused
+  * Handle lost focus on Emscripten
+  * Remove -sFORCE_FILESYSTEM=1 from compile options
+  * Android port
+  * Enable ABI splits
+  * Address review
+  * Build and mount repo.zip with fonts/ and lang/
+  * Disable editor on Android (like Steam Deck)
+  * Add DocumentsProvider
+  * Fix release builds (Gradle why)
+  * Use adaptive icon (legacy was chosen by mistake)
+  * Ignore output-metadata.json
+  * Android CI
+  * make more tasks depend on zipRepoAssets
+  * Use existing package name to allow updates
+  * Fix compiler warnings on Android
+  * Use Android SDL2 via Maven
+  * CONTRIBUTORS.txt: leo60228 -> leo vriska
+  * update android sdl2 to 2.30.8
+  * correctly set VVV_CXX_SRC flags (set_source_files_properties isn't cumulative)
+  * iOS port (for desktop_version) (#1137)
+  * Fix TARGET_OS_IPHONE checks
+
+  [ Dav999-v ]
+  * Use wide-char Windows API functions on Windows
+  * Replace TiXmlDocument load and save functions by PHYSFS
+  * Replace 2 remaining TinyXml LoadFile()s by FILESYSTEM_loadTiXmlDocument
+  * Add myself to CONTRIBUTORS
+  * Remove superfluous whitespace in entity XML data in level files (#119)
+  * Add editor saving/loading error messages
+  * Fix editor unexpectedly quitting after failed save-and-quit
+  * Make menus automatically centered and narrowed
+  * Correct minimum horizontal spacing check
+  * Document menu width limit better
+  * Move some options to a new menu, "advanced options"
+  * Move "resize to nearest" grouped with other resolution-related options
+  * Change "toggle letterbox" to "scaling mode"
+  * Fix Direct Mode selection square not moving with tile selection drawer
+  * Make game save box 16 pixels wider
+  * Reposition game time and trinket count in game save box
+  * Fix "name lookup of ‘i’ changed" warning in editor.cpp
+  * Add error message if telesave fails
+  * Add error message if quicksave fails
+  * Restrict the ENTER menu to saving while in a cutscene
+  * Visually remove all other tabs in SAVE-only enter screen
+  * Add error messages for failed writes to disk of settings
+  * Make indentation in settings saving error consistent with rest of cases
+  * Simplify lua-esque assignment
+  * Re-fix handling filepaths with non-ASCII characters on Windows
+  * Change mode in Windows-only mkdir to 0777
+  * Fix -Wformat-security warnings
+  * Simplify time formatting functions
+  * Fix C/C++ standards being unset for VVVVVV target if CMake is >= 3.1.3
+  * Implement new string formatting system (VFormat)
+  * Add support for start position via level XML for CLI playtesting
+  * Clarify submodules in desktop_version/README.md
+  * Add English language files and README
+  * Add Dutch language files
+  * Add Esperanto language files
+  * Add (2020) Spanish language files
+  * Add Space Station font
+  * Add c-hashmap submodule (not compiled yet)
+  * Add C-HashMap to CMakeLists.txt
+  * Add Textbook
+  * Indicate what special roomnames are in the levels
+  * Support underscore (_) in VFormat arg name
+  * Add Localization.cpp/h (not compiled yet)
+  * Add LocalizationStorage.cpp/h (not compiled yet)
+  * Add LocalizationMaint.cpp/h (not compiled yet)
+  * Add RoomnameTranslator.cpp/h (not compiled yet)
+  * Add localization "foundation" (many code changes)
+  * Use UTF-8 characters for names in credits instead of {|}~
+  * Use loc::toupper_ch instead of SDL_toupper in VFormat
+  * Add textcase(n) commands to scripts
+  * Editor.cpp: make editormenurender translatable
+  * Editor.cpp: make editorrender translatable
+  * Editor.cpp: make remaining strings translatable
+  * Entity.cpp: make all activity prompts translatable
+  * FileSystemUtils.cpp: make translatable
+  * Game.cpp: make menu options (in Game::createmenu) translatable
+  * Game.cpp: Make Game::updatestate translatable
+  * Game.cpp: make remaining strings translatable except gethardestroom
+  * Graphics.cpp: make whole file translatable
+  * Render.cpp: make menurender translatable
+  * Render.cpp: make gamerender translatable
+  * Render.cpp: make titlerender and gamecompleterender translatable
+  * Render.cpp: make maprender translatable
+  * Render.cpp: make remaining strings translatable
+  * Script.cpp: make whole file translatable (except for a Welcome Aboard)
+  * UtilityClass.cpp: make time formats and numbers translatable
+  * main.cpp: make pause screen translatable
+  * preloader.cpp: make loading screen translatable
+  * Make some hardcoded room names (and some special ones) translatable
+  * Add Ctrl+X for roomname translator mode
+  * Add level exploring menu for translators
+  * Add per-area untranslated roomname counters
+  * Update font to latest version
+  * Split localization README.txt in -translators and -programmers versions
+  * Add support for string cases in strings.xml (gendered Rescued/Missing)
+  * Add line about string cases to README-translators.txt
+  * Complete the Dutch room name translations
+  * Add cases for intermission replay options, button fillers in editor
+  * Remove "COPY TILES" strings
+  * Make some minor changes in the Dutch translation
+  * Add Catalan translation by Eduard Ereza Martínez
+  * Add cutscene test menu
+  * Update Esperanto and Catalan translations
+  * Replace all localization SDL_free with VVV_free
+  * Use setstate(n)/incstate()/setstatedelay(n) in localization changes
+  * Start rewrite of font system
+  * Switch font.txt over to font.fontmeta
+  * Draw outlines for colored characters correctly
+  * Implement first font::print function, fix most fading of colored glyphs
+  * Add initial version of font::print_wrap
+  * Move wordwrapping functions and len to Font.cpp/font:: namespace
+  * Handle more flags in print and len functions
+  * Add font containers for global and custom fonts
+  * Add some more preparation for multi-font support and proper unloading
+  * Start using level-specific font where needed, make CJK tweaks
+  * Migrate more prints to font::, determine font for most textboxes
+  * Print activity zone text in correct font, remove Graphics::drawtextbox
+  * Complete font::print_wrap flag handling
+  * Add language-specific font configuration
+  * Use languages' fonts for options on language screen
+  * Fix pause screen font on language screen with other language selected
+  * Migrate more prints and graphics.len calls to font::
+  * Completely remove Graphics::len
+  * Use PR_RIGHT for interim version info in main menu
+  * Completely remove Graphics::bigbprint, bigrprint and bigbrprint
+  * Completely remove Graphics::PrintAlpha and Graphics::bprintalpha
+  * Completely remove Graphics::bprint
+  * Completely remove Graphics::bigprint
+  * Clean up Font.h, move structs into Font.cpp
+  * Improve level metadata display and font handling
+  * Allow levels to select a font via XML, show correct font in levels list
+  * Add setfont scripting command
+  * Completely remove Graphics::Print, make many CJK positioning fixes
+  * Fix indentation style of case Menu::levellist in menurender
+  * Completely remove Graphics::PrintWrap
+  * Make wordwrapping functions take font arguments
+  * Make main game content use interface font instead of 8x8 font
+  * Add menu for selecting the level font
+  * Harden next_wrap against getting stuck on a single character
+  * Write max_local to language files during sync
+  * Update readmes for new font system
+  * Position CJK room name correctly in editor
+  * Replace "by" for level authors with happy face
+  * Replace PR_COLORGLYPH_BRI(a) and PR_ALPHA(a) with PR_BRIGHTNESS(a)
+  * Improve ordering of font charset loading
+  * Add button glyph font files
+  * Add name->idx hashmap in FontContainer
+  * Add support for button glyph fallback fonts
+  * Update fonts/README.txt for button glyphs
+  * Move line width addition in next_wrap to be after switch block
+  * Deduplicate font::print for activity zone prompts
+  * Allow multiple lines and wordwrapping in activity zone prompts
+  * Increase max="" value for jukebox song names in language files
+  * Fix centering of translated "Level Complete!" and "Game Complete!"
+  * Add UTF8.c
+  * Remove #include <utf8/unchecked.h> from Graphics.cpp
+  * Replace utfcpp by UTF8.h in CustomLevels.cpp
+  * Replace utfcpp by UTF8.h in Editor.cpp
+  * Replace utfcpp by UTF8.h in KeyPoll.cpp
+  * Replace utfcpp by UTF8.h in Localization.cpp
+  * Replace utfcpp by UTF8.h in Textbox.cpp
+  * Replace utfcpp by UTF8.h in Font.cpp
+  * Remove utfcpp submodule
+  * Fix UTF-8 handling in next_wrap
+  * Replace use of PHYSFS UTF-8 functions by UTF8.h
+  * Fix possible dangling pointers in FontContainer.map_name_idx
+  * Remove old Spanish language files
+  * Change font::print_wrap text argument from std::string to const char*
+  * Overload font::print text argument for both std::string and const char*
+  * Change font::len text argument from std::string to const char*
+  * Update c-hashmap submodule [2023-03-05]
+  * Remove key casts from hashmap function calls
+  * Add new language files
+  * Sync language files
+  * Update font.png
+  * Fix font .txt files not being null-terminated
+  * Fix loading font .txt files that contain null bytes
+  * Add support for button glyph display
+  * Add textbuttons() script command, make Violet's ENTER dialogue dynamic
+  * Replace ACTION in texts by {button} placeholders
+  * Add controller button layout mappings
+  * Switch between controller glyphs and keyboard keys automatically
+  * Sync language files for button glyphs changes
+  * Make Violet's button dialogue work in cutscene test
+  * Add /MP to CMakeLists for Windows
+  * CI: Skip "Download SDL" step instead of using Test-Path, use cache@v3
+  * CI: Cache build folder on Windows
+  * CI: Include CMakeLists.txt in the cache
+  * Add button glyphs support to selection hint on language screen
+  * Show correct button glyph for interact if Enter/E are not split
+  * Make textbuttons() work for transparent text boxes
+  * Fix rebinding "menu" (esc) bindings to different actions
+
+  [ TerryCavanagh ]
+  * Adding original mapping tools for the sake of completeness
+  * Removed a dumb word I used in a comment
+  * Re-added the mouse cursor (reverted https://github.com/TerryCavanagh/VVVVVV/pull/15)
+  * Found another dumb comment, removed
+  * Changed the wording on "Invincibility" and "Game Speed" accessibility options
+  * Clean up of options menus for v2.3 (fixes #696)
+  * Default to 60 FPS mode (fixes #702)
+  * add missing files to mobile_version data folder
+  * Final strings for Catalan, Russian and Korean
+  * Final strings for Simplified Chinese
+  * Changed to Simplified Chinese to match enemy graphic changes
+  * Final strings for German
+  * Final strings for Irish
+  * Minor fixes for German and Irish
+  * Final strings for Traditional Chinese
+  * Final strings for Turkish
+  * Final strings for Italian
+  * Squashed commit of the following:
+  * Final strings for Ukrainian
+  * minor fixes for Ukrainian
+  * Final strings for Brazilian Portuguese
+  * Final strings for Japanese
+  * Enemy graphics for Japanese
+  * minor fix for Japanese
+  * Final strings for Welsh
+  * Final strings for European Portuguese
+  * Final strings for French
+  * Enemy graphics for Korean
+  * Final strings for Spanish
+  * minor fix for Spanish
+  * minor fix for Esperanto (checkpoint c -> k)
+  * Enemy graphics for all other languages*
+  * minor fixes for Irish
+  * Final strings for Polish and Silesian
+  * minor fixes for Polish and Silesian
+  * minor fixes for Turkish and Esperanto
+  * small update to Polish (changed roomname Aleja Woronicza -> Taśmy prawdy)
+  * minor change to SIM enemy sprite in pt_BR and pt_PT
+  * updated İZLE sprite for turkish
+  * Change Spanish name in meta.xml to Español (es)
+  * Add localisation credits to main menu credits
+  * minor updates to Welsh, German, Japanese, Polish and Silesian
+  * updates to Korean
+  * minor updates to Italian
+  * updated Italian localisation credits
+  * whoops
+  * minor fixes for Spanish
+  * Create logo.gif
+  * Update logo.gif
+  * updated Italian localisation credits
+  * minor fix to Portuguese (pt)
+  * added wordy2 support to spanish
+  * more spanish wordy2 changes
+  * another spanish wordy2 fix
+  * minor proofreading changes for Simplified Chinese
+  * added translation of the word "Arabic" to all* languages
+  * added Esperanto translation for "Arabic"
+  * updates to roomnames for Arabic
+  * typo in european portuguese
+  * added Space-G to contributors
+  * minor fixes for Welsh
+  * Copied new localised sprites to zh_TW
+  * Added SnDream to contributors
+  * fix Arabic credits
+  * Added Latin American Spanish localisation
+  * Added Argentine Spanish localisation
+  * renamed es_AR and es_419 folders
+  * add a one pixel gap between each line in textboxes (main game only)
+  * don't apply linegap to certain special textboxes
+  * added Guido Di Carlo and LocQuest to credits
+  * added placeholder translations for the three Spanish variants in the credits
+  * updated pt_BR translation with new proofread version
+  * added Ivan Lopes and Lucas Nunes to credits
+  * Added proxy string for "Editing and LQA"
+  * added translation category support to ending credits also
+  * minor fixes for Silesian
+  * minor updates to Latin American Spanish and Argentinian Spanish
+  * minor updates to Brazilian Portuguese
+  * minor updates to es_419, es_AR and pt_BR
+  * added "Editing and LQA" string to es_AR and es_419
+  * minor updates to Spanish
+  * whoops
+
+  [ ePirat ]
+  * Add CI
+
+  [ Allison Fleischer ]
+  * Fix a stray "seperate"
+  * Add self to CONTRIBUTORS
+  * Fix "seperate" in mobile version as well
+  * Add graphics option to toggle mouse cursor
+  * Display menu text darker if mouse cursor is off
+
+  [ Thomas Sänger ]
+  * switch position of Legal Stuff & Changes
+  * add myself to CONTRIBUTORS.txt (with LC_COLLATE=C ordering)
+
+  [ Fredrik Ljungdahl ]
+  * Make the level editor use font outlines for text appropriately
+  * Add myself to CONTRIBUTORS.txt
+  * Don't outline entity directions (looks odd and can never be hard to see)
+  * Add a null terminator to loaded TinyXML files (#117)
+  * Fix level editor not using LoadTiXmlDocument
+  * Fix tower quicksave bug (only appeared in some builds)
+  * Move skipblocks default setting to obj.init()
+  * Fix minor issue with respawning into a tower
+  * Draw editor entities according to ingame order
+  * Fix and improve handling of cancelling roomtext/scripttext input
+  * Make tiles in tower mode behave consistently with tower tileset elsewhere
+
+  [ Stelpjo ]
+  * Added an apostrophe to 'controllers' in game options
+  * Added myself to CONTRIBUTORS.txt
+  * Fixed some music bugs Previously, when MMMMMM is installed but the user is using PPPPPP, niceplay would still restart the song even if it's the same. That has been fixed. In addition, Plenary and Path Complete no longer loop when MMMMMM is installed but PPPPPP is in use.
+
+  [ AllyTally ]
+  * Fix undefined behavior while loading scripts
+  * Add self to CONTRIBTORS.txt and githubfriends
+  * Fix undefined behavior when activating scripts
+  * Make "[Press ENTER to return to editor]" fade out after a bit
+  * Add a player trail to the editor (ghosts)
+  * Remove accidental whitespace
+  * Fix mixed indentation
+  * Don't initialize game.gametimer in the header file
+  * Remove another header initialization
+  * Only add editor ghosts if the editor exists
+  * Allow using Warp Zone gray tileset in editor
+  * Add 7x7, 9x9, full horizontal and vertical brush sizes
+  * Fix #400
+  * fix #382 and fix #370
+  * Fix #199
+  * Fix #380
+  * fix tab instead of spaces
+  * replace stray tab with spaces
+  * add newline at the end of game.cpp
+  * Don't fade music out when returning to the menu if it's Presenting VVVVVV
+  * Add audiopause(on/off) command
+  * Change the text of custom activity zones
+  * Add `setactivitycolour(colour)` and `setactivitytext()` commands
+  * Fix formatting and add an INBOUNDS_VEC
+  * Reset new variables in hardreset
+  * Fix #892
+  * deduplicate a lot of map code
+  * dedupe another piece of code
+  * Fix a missing mapzoom multiplication
+  * Generate the minimap when entering editor playtesting
+  * Remove accidental comment change
+  * Fix copy-paste error
+  * Move generatecustomminimap to case 21
+  * Deduplicate map render data calcuations
+  * Fix legend positions
+  * state locking
+  * Also lock statedelay
+  * Small fixes
+  * Convert more statedelay assignments to function call
+  * remove two-argument setstate
+  * Fix small bug with map being off in custom levels
+  * Move from surfaces to the SDL render system
+  * Fix screenshake not clearing the gameplay cache
+  * Allow a maximum of 26 lines, with L suffix
+  * Fix screen shake during flip mode not flipping the screen
+  * custom textbox colors
+  * Animated roomnames, setroomname command
+  * Strip out old special roomname system
+  * Fix hardestroom not being translated
+  * Fix the game texture clearing during menu shaking
+  * Fix textboxes fully fading out during blackout
+  * Cleanup tools & main rendering
+  * Clean code for direct mode drawer
+  * Fix gravity/warp lines being modified during draw
+  * Move everything to the editor state system
+  * Update English language file
+  * Clean up scripts in the editor
+  * Add interpolation to tile tools
+  * Add edge-guides for horizontal gravity lines
+  * Allow placing warp token destination in walls
+  * Fix macOS build errors/warnings
+  * Fix missing leftbutton check
+  * Remove hardcoded textbox colours
+  * Unhardcode textbox colors in textbox arguments
+  * Reset textbox colors properly
+  * Add fill bucket subtool
+  * CTRL+, and CTRL+. to modify platv
+  * Disable more flashing elements if a11y is on
+  * Add textboxtimer command
+  * Rewrite autotiling completely
+  * Don't trigger UB with autotile type none
+  * Add separate tilecol max for direct mode
+  * Add more draw functions, make less code use rectangles
+  * Clean up background drawing code
+  * Remove line_rect and prect
+  * Some formatting fixes
+  * Replace `drawrect` with `draw_rect`
+  * More misc cleanup
+  * Fix a couple issues
+  * Fix missing parentheses
+  * Remove unused drawing overloads
+  * Make gravity lines render when screen effects are off
+  * Fix texture cache missing in certain situations after resizing the window
+  * Recache textures when returning to ingame from map
+  * Change if to elseif and remove return
+  * Fix UB where image loading fails in certain cases
+  * options to spawn entity 21, and no activity zone
+  * Only spawn activity zone if the script exists
+  * Remove NO_EDITOR/NO_CUSTOM_LEVELS, disable editor on Steam Deck
+  * Check SteamDeck in keyboard_is_available
+  * Re-add accidentally removed address lines
+  * Replace no level editor string
+  * Remove unused Unused.h includes
+  * Add check for keyboard_is_active
+  * Update editor_disabled more often, remove `-enable-editor`
+  * Change lab autotiling
+  * Fix gravity line edgeguides
+  * Fix bug with `destroy(moving)`/`destroy(disappear)`
+  * Fix yellow lab autotiling
+  * Initial implementation of textbox sprites
+  * Finish implementing sprites in textboxes
+  * Add `textimage` for `levelcomplete` and `gamecomplete`
+  * Add level debugger screen
+  * Add more info, add lang string
+  * Debug lines while not hovering
+  * Add flag display by holding U
+  * Add -leveldebugger flag
+  * Fix moving entities flashing in over 30fps mode
+  * Replace manual check with SDL_PointInRect
+  * Add gravity line true hitbox visuals
+  * Update to latest commit
+  * Add warp background as general information
+  * Fix debugging in the tower, update wording
+  * Unhardcode TAB in translation strings
+  * Fix incorrect tiles in outside BG autotiling
+  * Change 0s to 713 for lab background
+  * Fix BG tile bug from switching from pink SS
+  * Make outside background tiles ignore solid walls
+  * Fix broken warp background check
+  * Fix resizing the map not changing the current room
+  * Fix another incorrect tile in autotiler
+  * Fix another incorrect autotile
+  * Fix text images not fading
+  * Fix typing pipes in save/load prompts in editor
+  * Implement scaling modes manually
+
+  [ Matt Penny ]
+  * Add -basedir option to specify base user directory  (#154)
+  * Add option to compile without the level editor
+  * Add option to allow custom levels when the editor is disabled
+  * Fix NO_CUSTOM_LEVELS compile after #158
+  * Support pre-C++11 compilers
+  * Use uint32_t instead of char32_t
+  * Use dynamic credits lists for main menu credits screens (and add GitHub contributors) (#160)
+  * Statically allocate level arrays
+  * Fix build with CUSTOM_LEVEL_SUPPORT=disabled
+  * Fix 'Prize for the Reckless' spikes when switching game modes
+
+  [ Misa ]
+  * Prevent removing line if there is only one line
+  * Fix crewmate-found text boxes overlapping in flip mode
+  * Fix typo: "quiting" (one T) to "quitting" (two Ts)
+  * Initialize x to 0 in ss_toi()
+  * Fix left-clicking on script boxes
+  * Refactor roomtext to not use ad-hoc objects / separate length trackers
+  * Refactor edentities to not use separate length-trackers
+  * Fix undefined behavior with left-click logic in editor
+  * Don't draw text outline for roomtext in the editor
+  * Write unlock.vvv when pressing Alt+F4
+  * Fix unfocusing the game while in fullscreen mode
+  * Allow using F11 and (on macOS) RCmd+Enter/F to toggle fullscreen
+  * Make the toggle fullscreen conditional more readable
+  * Don't print useless false error message when toggling fullscreen
+  * Do proper error handling inside Screen::ResizeScreen()
+  * Don't let custom levels tamper with main game save data
+  * Correct Warp Zone's area name on the mobile version
+  * Make `commands`, `sb`, and `hooklist` not use separate length-trackers
+  * Remove global args from Game
+  * Remove global args from entityclass
+  * Remove global args from mapclass
+  * Remove global args from Graphics
+  * Remove global args from scriptclass
+  * Remove global args from editorclass
+  * Remove global args from Logic.cpp
+  * Remove global args from Input.cpp
+  * Remove global args from titlerender.cpp
+  * Remove global args from preloader.cpp
+  * Remove global args from main game loadlevel() functions
+  * Remove unused argument of entityclass::getcompanion()
+  * Remove unused arguments from Graphics::Hitest()
+  * Remove unused arguments from Graphics::drawtile()
+  * Remove unused arguments from Graphics::drawtile2()
+  * Remove unused function entityclass::checkdirectional()
+  * Remove useless function Game::telegotoship()
+  * Remove unused variable Game::sfpsmode
+  * Remove useless variable Game::telecookieexists
+  * Remove useless variable Game::quickcookieexists
+  * Remove useless variables 'swfStage' and 'stage'
+  * Remove now-unused class Stage
+  * Remove useless function updategraphicsmode()
+  * Remove useless function Screen::ClearScreen()
+  * Remove unused function musicclass::initefchannels()
+  * Remove unused argument from musicclass::playef()
+  * Remove usages of second argument of playef() script command
+  * Change all UtilityClass::something to help.something
+  * Remove trailing whitespace from all files
+  * Fix mixed indentation in Game.cpp and Game.h
+  * Fix mixed indentation in Graphics.cpp
+  * Fix mixed indentation in Map.h and Map.cpp
+  * Remove semi-useless function editorclass::weirdloadthing()
+  * Fix mixed indentation in Script.cpp and Script.h
+  * Fix mixed indentation in Screen.cpp
+  * Remove unused variable Screen::glScreen
+  * Fix mixed indentation in GraphicsUtil.cpp
+  * Fix mixed indentation in Entity.cpp and Entity.h
+  * Fix mixed indentation in Logic.cpp
+  * Fix mixed indentation in Input.cpp
+  * Fix mixed indentation in titlerender.cpp
+  * Remove one trailing whitespace in preloader.cpp
+  * Fix mixed indentation in preloader.cpp
+  * Fix mixed indentation in Scripts.cpp
+  * Fix only one line of mixed indentation in Music.cpp
+  * Fix mixed indentation in main.cpp
+  * Remove game.test and game.teststring
+  * Move tempstring off of Graphics, Game, and UtilityClass
+  * Remove outdated comments from Game.cpp
+  * Remove outdated comments from Graphics.cpp
+  * Remove outdated comments from titlerender.cpp
+  * Remove outdated comments from editor.cpp
+  * Remove outdated comments from Script.cpp
+  * Remove outdated comments from Map.cpp
+  * Remove outdated comments from Logic.cpp
+  * Realign logic update trio comments
+  * Remove outdated comments from Input.cpp
+  * Remove outdated comments from Music.h and Music.cpp
+  * Remove unused function musicclass::processmusicfade()
+  * Remove global 'temp' variable from titlerender.cpp
+  * Remove outdated comments from main.cpp
+  * Remove remnants of screen recording stuff
+  * Remove outdated comments from preloader.cpp
+  * Fix undefined behavior when backspacing in script list with 0 scripts
+  * Un-fix using-PPPPPP-while-MMMMMM-present for custom levels
+  * Remove another outdated comment in Music.cpp
+  * Remove unused function musicclass::loopmusic()
+  * Remove duplicate function musicclass::stopmusic()
+  * Move entityclass::setenemy() to entclass::setenemy()
+  * Move entityclass::setenemyroom() to entclass::setenemyroom()
+  * Move entityclass::settreadmillcolour() to entclass::settreadmillcolour()
+  * Add entityclass::removeentity()
+  * Add macro removeentity_iter()
+  * Refactor entities and linecrosskludge to not use the 'active' system
+  * Remove remnants of entity 'active' conditionals
+  * Remove entityclass::cleanup()
+  * Remove unused function entityclass::gettype()
+  * Make entityclass::updateentities() no longer a bool
+  * Remove some more outdated comments from Entity.cpp
+  * Fix nested if-statement chains relating to entities in Entity.cpp
+  * Remove two '//Active' comments
+  * Remove 'if (entities[i].state == 0) { }'
+  * Remove entclass::clear(), simplify entclass initializations
+  * Move entityclass::setblockcolour() to blockclass::setblockcolour()
+  * Add macro removeblock_iter()
+  * Refactor blocks to not use the 'active' system
+  * Fix undefined behavior when removing activity zones
+  * Fix mixed indentation in Enter-handling code when playtesting
+  * Remove blockclass::clear(), simplify blockclass initializations
+  * Fix nested if-statements relating to blocks in Entity.cpp
+  * Move text box fadeout removal to Graphics::drawgui()
+  * Refactor text boxes to not use the 'active' system
+  * Remove remnant of 'active' if-conditional
+  * Refactor text box contents to not use a separate length-tracker
+  * Remove textboxclass's firstcreate and clear, simplify initializations
+  * Refactor scriptclass txt to not use a separate length-tracker
+  * Fix typo "Your have unlocked" to "You have unlocked"
+  * Rename titlerender.cpp to Render.cpp
+  * Clean up some indentation in gamelogic()
+  * Condense some nested if-statements in gamelogic()
+  * Condense some nested else-if statements
+  * De-dupe screen transition / warping logic
+  * Fix memory leak from warping moving platforms
+  * Don't update game.stat_trinkets in custom levels
+  * Don't boot user back to main menu after toggling using MMMMMM
+  * Don't use separate variable for number of collected trinkets
+  * Don't use separate variable for number of collected crewmates
+  * Remove map.customtrinkets
+  * Remove map.customcrewmates
+  * Remove unnecessary int casts relating to custom crewmate numbers
+  * Don't use separate variable for number of trinkets in level
+  * Don't use separate variable for number of crewmates in level
+  * Remove now-useless function editorclass::countstuff()
+  * Remove unused variable game.trinkencollect
+  * Remove useless variable game.coins
+  * Remove unused stat_* variables
+  * Remove unused variables temp_unlock and temp_unlocknotify
+  * Declare game.teleport as a bool instead of an int
+  * Remove useless variable game.timerStartTime
+  * Refactor Game::crewrescued() to use std::count() instead
+  * Remove temporary UtilityClass from Game::savestats()
+  * Declare obj.flags a vector of bools instead of ints
+  * Don't use obj.changeflag() to set flags
+  * Remove now-unused function entityclass::changeflag()
+  * Remove unused function entityclass::changecollect()
+  * Remove unused function entityclass::changecustomcollect()
+  * Remove unused function entityclass::resetflags()
+  * Remove unused function entityclass::confirmflags()
+  * Change obj.collect into a vector of bools
+  * Make obj.customcollect a vector of bools
+  * Put trinkets() and crewmates() declaration on their own lines
+  * Use for-loop in Game::crewrescued()
+  * Don't use std::count() in Game::trinkets()
+  * Don't use std::count() in Game::crewmates()
+  * Dynamically add teleporters instead of using indices
+  * Remove now-unused parameter 't' from mapclass::setteleporter()
+  * Remove map.numteleporters
+  * Dynamically add shinytrinkets instead of using indices
+  * Remove now-unused parameter 't' from mapclass::settrinket()
+  * Remove map.numshinytrinkets
+  * Remove unused function entityclass::cblocks()
+  * Add struct MenuOption
+  * Add Game::option()
+  * Refactor menu creation code
+  * Remove outdated commented-out graphics options code
+  * Move menu ACTION press handling to separate function
+  * Condense indentation levels of else-if chain in "play" menu
+  * De-duplicate "You have unlocked" menu input and options
+  * Move menu rendering to separate function
+  * Fix NO_CUSTOM_LEVELS builds breaking after command-line playtesting
+  * Fix compile failure if both MAKEANDPLAY and NO_CUSTOM_LEVELS are defined
+  * De-duplicate copy-pasted input/render code in menus
+  * De-duplicate "secret lab" menu option in "play" menu
+  * Fix indentation of "graphicoptions" in Render.cpp
+  * Use case-switch for menu options where possible
+  * Prevent selecting Secret Lab if game isn't at full speed
+  * Gray out play modes if disabled due to enabled accessibility options
+  * Bump version number in bottom-right to 2.3
+  * Capitalize "No Death Mode" in "not available" message
+  * Move editor menu ACTION press handling to separate function
+  * Move editor menu option rendering to separate function
+  * Change "else if"-chain in editormenuactionpress to case-switch
+  * Convert menu names to be an enum instead of being stringly-typed
+  * Remove unused variable Game::menuselection
+  * Turn game.currentmenuname "else-if"s into case-switches
+  * Remove unused menu setslowdown1
+  * Rename Menu::setslowdown2 to Menu::setslowdown
+  * Remove ABCDEFG comment
+  * Move temp int off of Game
+  * Add struct MenuStackFrame
+  * Add vector of MenuStackFrame menustack to Game
+  * Push a stack frame when Game::createmenu() is called
+  * Add function Game::returnmenu()
+  * Remove unnecessary createmenu(Menu::graphicoptions) calls
+  * Mark same menus in levels list, credits, and unlock menus
+  * Fix being able to mismatch summary and menu color
+  * Use game.returnmenu() for all "return" menu options
+  * Remove now-unused variable Game::previousmenuname
+  * Change gamestate ints to their enum names
+  * Don't go to main menu when exiting to menu
+  * Add a "previous page" option to the levels list
+  * Add a "previous page" option to the credits menu
+  * Fix going to wrong menu upon quit
+  * Fix Menu::quickloadlevel not using returnmenu()
+  * Add -Werror=implicit-fallthrough to CMakeLists.txt
+  * Don't add -Werror=implicit-fallthrough for MSVC
+  * Add replace_all()
+  * Add is_positive_num() to UtilityClass.cpp
+  * Add find_tag()
+  * Add tag finder functions
+  * Optimize editorclass::getLevelMetaData()
+  * Handle errors from PHYSFS_readBytes()
+  * Add FILESYSTEM_openDirectory() and _openDirectoryEnabled()
+  * Add "open level folder" option to playerworlds menu
+  * Disable "open level folder" in Steam Big Picture mode
+  * Add being able to mute the music by pressing N
+  * Add "Press N to mute music only" to "Game paused" screen
+  * Remove useless attributes m_globalVol, set/getGlobalSound from Game
+  * Remove Game::globalsound
+  * Use an 'else' instead of re-checking 'game.muted' again
+  * Pause all audio output when the game is unfocused
+  * Fix weird bracketing in game.gamestate switch-case
+  * Draw first-pass of H/V warp BGs 3 pixels to the left
+  * De-duplicate map.custommode check when drawing size-type 2/8 entities
+  * De-duplicate repeated size-type 2/8 tile drawing with a for-loop
+  * De-duplicate size-type 2/8 drawing by putting them together
+  * Fix the 2nd to 4th tiles of moving plats rendering offset from 1st tile
+  * Add function Game::returntomenu()
+  * Improve quit-to-menu menu handling
+  * Fix editor menu options going back to editor not using returnmenu()
+  * Improve ed_settings Esc press handling
+  * Add function Game::anything_unlocked()
+  * Make "start game" goto play menu if any unlocks, even if saves deleted
+  * Remove unnecessary 'game.' qualifiers in Game.cpp
+  * Don't clear telesummary/quicksummary if delete unsuccessful
+  * Make deletequick() and deletetele() error messages less vague
+  * Fix deletequick() and deletetele() not deleting their files
+  * Actually delete saves/unlock.vvv in deletestats()
+  * Add and use Game::save_exists()
+  * Fix music not being silent during trinket/crewmate collect
+  * Merge towerlogic() into gamelogic()
+  * De-duplicate flip mode conditional code in Graphics::drawentities()
+  * Remove temporary indents from the last commit
+  * Invert entity invis check to reduce indentation level
+  * Prevent double-rendering of warping sprites on left and top of screen
+  * Fix offscreen teleporter rendering
+  * Make Graphics::drawentities() use a case-switch instead of an else-if
+  * Merge drawtowerentities() into drawentities()
+  * Merge towerrender() into gamerender()
+  * Simplify GAMEMODE loop
+  * De-duplicate screen effects timer decrementing
+  * Put screen effects render handling inside a function
+  * Only render screen effects on the title screen and in-game
+  * Reset screen effects timers in hardreset()
+  * Call hardreset() when returning to menu from editor
+  * Fix exiting No Death Mode being one menu too far back
+  * Fix editor menu being drawn on top of editor with BGs disabled
+  * Don't redraw tower background in descending towers
+  * Fix descending tower BG redraw
+  * Merge drawtowerbackgroundsolo() into drawtowerbackground()
+  * Render screen effects in maprender()
+  * Don't re-draw credits scroll background every frame
+  * Prevent spawning crewmates/activity zones in custommode
+  * Fix menu that you land on when you complete game or custom level
+  * Fix copy-paste bug in command-line playtesting code
+  * Re-draw tower background when dying in No Death Mode
+  * Add bounds checks to functions taking in entity/blocks/linecross indices
+  * Add puts()es to functions unlikely to receive OoB indices
+  * Add towermode checks to minitowermode screen transitions
+  * Prevent updating an entity if updateentities() removed it
+  * Add out-of-bounds puts() to updateentitylogic and entitymapcollision
+  * Rename "start" option to "new game"
+  * Fix a copy-paste error in getLevelMetaData()
+  * Remove unused variable 'pause' from Game
+  * Move quit to menu to Game::quittomenu()
+  * Move script.hardreset() to after quit to menu
+  * Move return to lab code to Game::returntolab()
+  * Move fading to menu to separate variables
+  * Move returning to lab to separate variables
+  * Directly do returntolab code instead of relying on a script
+  * Fix returning to editor when game is faded-out
+  * Remove reliance on fademode to return to menu
+  * Only draw fading-in and fading-out animations in MAPMODE
+  * Remove fademode check from quitting to menu
+  * Unindent block that previously had the fademode check
+  * Fix flag 67 turning on too early
+  * Call game.savestats() when setting new Super Gravitron record
+  * Reset vvvvvvman size in mapclass::resetplayer()
+  * Abstract returning-to-editor code to Game::returntoeditor()
+  * Move returning to editor to end of frame
+  * Fix 1x1 quicksand collision optimization not working
+  * Remove graphics.drawgui() from maprender()
+  * Don't duplicate activity zone handling code in playtesting
+  * Fix FILESYSTEM_openDirectory command used on Haiku and *BSD
+  * Refactor Labclass.cpp to not use strings for tilemaps
+  * Refactor WarpClass.cpp to not use strings for tilemaps
+  * Refactor Finalclass.cpp to not use strings for tilemaps
+  * Refactor Spacestation2.cpp to not use strings for tilemaps
+  * Refactor Otherlevel.cpp to not use strings for tilemaps
+  * Remove now-unused function mapclass::fillcontent()
+  * Refactor Tower.cpp to no longer use strings for tilemaps
+  * Remove now-unused fillbackground/fillcontents/fillminitower from Tower
+  * Refactor areamap initialization to not use strings
+  * Remove now-unused function mapclass::fillareamap()
+  * Handle return values from fread() and fwrite() in PLATFORM_copyFile()
+  * Fix indentation with ifdefs and FILESYSTEM_delete()
+  * Fix <hardestroom> having atoi() called on it when loading quicksave
+  * Re-create menu if returntomenu() is given current menu
+  * Select "continue" if returning from new game when having had a save
+  * Make all gamemode starts play a Viridan squeak
+  * Only flash and shake screen when enabling Flip Mode
+  * Fix 7 extra zeroes on the 21st row of Philadelphia Experiment
+  * Simplify inits/resets in entityclass/mapclass
+  * Add bounds checks to roomdeaths and roomdeathsfinal
+  * Don't draw "Game paused" when in blackout mode
+  * Allow crewmate to be cyan when initially placing it down
+  * Reset game.activeactivity and game.act_fade in scriptclass::hardreset()
+  * Refactor superpatrons/patrons/githubfriends to not push_back(string)
+  * Remove unnecessary middleman ed.swapmap
+  * Move custom script parser to its own function
+  * Fix indentation of scriptclass::loadcustom()
+  * Clean up all scriptclass externs into one location
+  * Clean up editorclass externs into one location
+  * Refactor Scripts.cpp to no longer hold strings in function args
+  * Refactor TerminalScripts.cpp to not store strings in function parameters
+  * De-duplicate speak_active/speak code
+  * Fix using speak/speak_active without a `text` beforehand
+  * Statically allocate built-in scripts as well
+  * Statically allocate Prize for the Reckless tilemap
+  * Remove unnecessary references to global self in loadcustom()
+  * De-duplicate say/reply line adding code
+  * Fix segfault if say/reply/text asks for more lines than there are
+  * Allow for conditional building of Steam and GOG APIs
+  * Fix custom assets being unmounted in scriptclass::hardreset()
+  * Add C++98/C++03 standards declaration to CMakeFiles.txt
+  * Refactor custom scripts to not be stored in one giant vector of lines
+  * Invert contents check in scriptclass::loadcustom()
+  * Unindent scriptclass::loadcustom() from previous commit
+  * Refactor customstring calculation in scriptclass::load()
+  * Remove include guards from Scripts.cpp and TerminalScripts.cpp
+  * Indent Graphics::reloadresources() with tabs
+  * Remove a trailing whitespace from Graphics.h
+  * Fix mixed indentation in editor.h
+  * Add TinyXML2
+  * Add FILESYSTEM_saveTiXml2Document()
+  * Add FILESYSTEM_loadTiXml2Document()
+  * Convert Game::loadstats() to TinyXML2
+  * Convert Game::savestats() to TinyXML2
+  * Convert Game::loadtele() to TinyXML2
+  * Convert Game::savetele() to TinyXML2
+  * Convert Game::loadquick() to TinyXML2
+  * Convert Game::savequick() to TinyXML2
+  * Convert Game::customloadquick() to TinyXML2
+  * Convert Game::customsavequick() to TinyXML2
+  * Convert custom quicksave loading attempt to TinyXML2
+  * Convert editorclass::load() to TinyXML2
+  * Convert editorclass::save() to TinyXML2
+  * Convert Game::loadsummary() to TinyXML2
+  * Convert Game::Game() to TinyXML2
+  * Convert Game::savecustomlevelstats() to TinyXML2
+  * Convert Game::loadcustomlevelstats() to TinyXML2
+  * Remove TinyXML-1
+  * Fix loading levels saved with 2.2 or earlier
+  * Guard all cases obj.getteleporter() is used unchecked
+  * Guard all cases obj.getplayer() is used unchecked
+  * Guard all cases obj.getcompanion() is used unchecked
+  * Add bounds checks to script commands that didn't have them
+  * Add <cctype> include
+  * Add unsigned char static_cast to argument of std::isdigit()
+  * Fix 'if (key.resetWindow)' indentation
+  * Move gameScreen off of the stack and onto the heap
+  * Remove passing around pointer to gameScreen from KeyPoll::Poll()
+  * Prevent removing the player entity
+  * De-duplicate flipmode check in entityclass::entitycollisioncheck()
+  * Add INBOUNDS macro
+  * Fix indexing out-of-bounds via an entity's drawframe
+  * Fix indexing out-of-bounds via tile numbers
+  * Fix indexing out-of-bounds with miscellaneous images
+  * De-duplicate flip mode code with font printing functions
+  * Fix indexing out-of-bounds with font printing functions
+  * Override custommode if in finalmode when drawing tilesvec
+  * Add Game::inspecial()
+  * Add inspecial() checks to savetele() and savequick()
+  * Remove i/j/k attributes from classes that don't need them
+  * Fix time trial result displaying 00:60 instead of 01:00
+  * Make elephant not be flashy if screen effects are disabled
+  * Prevent out-of-bounds indexing with trinket/crewmate IDs
+  * Only remove duplicate player entities in scriptclass::hardreset()
+  * Revert "Fix loading levels saved with 2.2 or earlier"
+  * Hardcode fix for next-line </edentity>
+  * Fix custom assets not being unmounted when exiting from editor/credits
+  * Fix unmounting assets exiting to menu resulting in silence
+  * Add #define __STDC_FORMAT_MACROS
+  * Add #define _POSIX_SOURCE
+  * Account for hours when calculating time trial result time
+  * Replace SDL_Delay() with an accumulator
+  * Indent timestep loop
+  * Move render functions to outer deltatime loop
+  * Add linear interpolation of rendered entities
+  * Initialize oldxp/oldyp in createentity()
+  * Use case-switch for para-check in entclass::setenemy()
+  * Move onground/onroof/animateentities logic to start of gamelogic()
+  * Set drawframe to tile when creating an entity
+  * Update oldxp/oldyp when screen wrapping
+  * Simplify "else if" indentation for right-side tower screen wrapping
+  * Update cutscene bars in fixed-timestep loop
+  * Interpolate cutscene bars position
+  * Reduce indentation of "else if" in Graphics::cutscenebars()
+  * Update screenshake position in fixed-timestep loop
+  * Interpolate fade amount
+  * Update activity prompt fade in fixed-timestep gamelogic()
+  * Update trophy text timer in fixed-timestep gamelogic()
+  * Remove useless function Graphics::textboxcleanup()
+  * Update text boxes in the inner fixed-timestep loop
+  * Update left-moving star BG in fixed timestep loop
+  * Interpolate left-moving star background
+  * Move Lab backbox updates to Graphics::updatebackground()
+  * Interpolate Lab backboxes
+  * Put rainbow BG timer in Graphics::updatebackground()
+  * Move upwards-moving star BG to Graphics::updatebackground()
+  * Interpolate upwards-moving star BG
+  * Move backboxrect off of Graphics
+  * Move menu offset logic to maplogic()
+  * Simplify menu-off rendering/logic code
+  * Interpolate bringing up and down quit/pause/teleporter screen
+  * Move general oldxp/oldyp updating to just before gameinput()
+  * Move gravity line color updating to gamelogic()
+  * Move cursor delay update logic to maplogic()
+  * Interpolate text box alpha
+  * Interpolate activity zone prompt fading in and out
+  * Simplify "else if" braces and indentation in activity prompt rendering
+  * Move horizontal warp background to Graphics::updatebackground()
+  * Interpolate horizontal warp BG
+  * Move vertical warp background updating to Graphics::updatebackground()
+  * Interpolate vertical warp background
+  * Move tower background update code to logic functions
+  * Interpolate tower background
+  * Move all-sides warp background update code to logic functions
+  * Interpolate all-sides warp BG
+  * Interpolate trophy text
+  * Interpolate "- Press ENTER to Teleport -" prompt
+  * Move crewframedelay to titlelogic() and maplogic()
+  * Fix crewmates facing wrong way or not being flipped for <1 frame
+  * Fix special text box images sometimes flashing
+  * Interpolate credits position
+  * Fix credits position being 1 frame off w/ BG when press/release ACTION
+  * Interpolate tower scrolling
+  * Set map.ypos when entering tower
+  * Move finalstretch animation code to gamelogic()
+  * Reset spikeleveltop and spikelevelbottom in mapclass::loadlevel()
+  * Interpolate spikeleveltop and spikelevelbottom
+  * Move setcol part of drawhuetile() to separate function
+  * Move big chunky pixel colors to separate function
+  * Fix, for in-GAMEMODE sprites, their colors updating too fast
+  * Fix colors updating too fast in TITLEMODE/MAPMODE/GAMECOMPLETEMODE
+  * Fix off-by-one in menuoffrender interpolation
+  * Fix off-by-one in activity zone prompt fading interpolation
+  * Fix off-by-one in trophy text interpolation
+  * Fix off-by-one in "- Press ENTER to Teleport -" interpolation
+  * Fix ZZT centipedes (or ASCII snakes) zipping around
+  * Interpolate gravitron top line extending
+  * Interpolate end picture reveal scroll
+  * Move glitch roomname updating to logic functions
+  * Smoothly interpolate editor notedelay
+  * Move "return to editor" alpha timer update to logic functions
+  * Smoothly interpolate "[Press ENTER to return to editor]" fadeout
+  * Make player not suddenly stop when screen transitioning
+  * Fix off-by-one in interpolation of extending gravity line
+  * Fix overdraw at bottom/right screen edges with H/V warp BGs
+  * Fix roomname being continuously drawn on top of itself
+  * Fix overdraw bug in tower background
+  * Fix flickering on bottom/right of screen with H/V warp BGs
+  * Fix flickering when holding down ACTION in credits scroll
+  * Fix red pill/mannequins/transmittor/radar dish being offset for 1 frame
+  * Make sure sprite colors in the editor don't update more than 30 FPS
+  * Make slowdown only apply in GAMEMODE/MAPMODE/TELEPORTERMODE
+  * Refactor how "hidden names" work
+  * Add v-sync hint
+  * Remove duplicate -renderer option
+  * Fix 1 frame where sad crewmates' drawframes weren't updated
+  * Fix 1-frame glitch when entering a room with plats in finalmode
+  * Move analogue mode filter update logic to fixed-timestep loop
+  * Move preloader update code to new function preloaderlogic()
+  * Fix animating entities' drawframes not being updated for 1 frame
+  * Add being able to toggle over/fixed-30-FPS, off by default
+  * Indent game loop yet again
+  * Add VSync graphics option, off by default
+  * Set alpha to 1 in 30-FPS-only mode
+  * Add 1 to fade-to-menu/lab delay
+  * Fix H/V warp BG not resetting when returning to editor (again)
+  * Fix editor ghosts being added multiple times per frame
+  * Fix ed.currentghosts updating way too fast
+  * Fix editor ghost colors updating too fast
+  * Rename time to time_
+  * Put the main game loop inside its own function
+  * Unindent gameloop()
+  * Move delta loop to its own function
+  * Unindent deltaloop()
+  * Move fixed loop to its own function
+  * Unindent fixedloop()
+  * Move infocus and network updates to fixedloop()
+  * Add NO_CUSTOM_LEVELS guard around EDITORMODE in deltaloop()
+  * Add inline directives to gameloop(), deltaloop(), fixedloop()
+  * Don't extern gameScreen, use *graphics.screenbuffer instead
+  * Work around SDL2 bug where VSync hint only applies on renderer creation
+  * Add '#if !defined(NO_EDITOR)' guards around editorinput/render/logic
+  * Remove unnecessary music.init() from asset mounting code
+  * Move endsWith() to UtilityClass.cpp and put it in header file
+  * Abstract assets mounting to FileSystemUtils.cpp
+  * Add -playassets command-line option
+  * De-duplicate and add safety checks to CLI args, fix brace style
+  * Add puts() if FILESYSTEM_init() fails
+  * Add being able to press Esc to go to quit menu from teleporter menu
+  * Add Graphics::map_tab()
+  * De-duplicate menu tab rendering
+  * Add macro-like inline func FLIP()
+  * De-duplicate Flip Mode code for custom levels' CREW page
+  * De-duplicate 'ed.ListOfMetaData[game.playcustomlevel]'
+  * De-duplicate 'ed.numcrewmates() - game.crewmates()'
+  * Add note to README about "compiler quirks" only applying to 2.2
+  * Fix -playx/y/rx/ry/gc/music looking at wrong argument
+  * Use game.inspecial() for special mode checks in maprender()
+  * Add Graphics::map_option()
+  * Add start of better Esc menu
+  * Move mapinput() ACTION press handling to separate function
+  * Unindent mapmenuactionpress()
+  * Pull the game.press_action conditional out of all the if-statements
+  * Use case-switch in mapmenuactionpress()
+  * Use game.inspecial() in mapmenuactionpress()
+  * Make better Esc menu functional
+  * Fix delta rendering glitch when going to options from new Esc menu
+  * Make returning from game/graphic options return to MAPMODE
+  * Consolidate common case 32/33 code
+  * Set map.scrolldir when going to options in-game
+  * Save BG vars to temp vars when entering menu and revert them upon exit
+  * Save current menu to temp variable when entering options from in-game
+  * Move returning to pause menu code to separate function
+  * Make pressing Esc in ingame_titlemode go back to pause menu
+  * Prevent turning on invincibility/slowdown in in-game options menu
+  * Fix toggling MMMMMM always playing Presenting VVVVVV
+  * Fix Graphics::map_option() not uppercasing selected text
+  * Round map.colstate to nearest 5 when entering options menus
+  * Reset map.bypos when entering options menus in-game
+  * Make "no, keep playing" go back to pause menu
+  * Prevent menu input if fading out
+  * Allow pressing Esc to go back to pause menu from quit prompt
+  * Allow pressing Esc to close Esc menu
+  * Fix Flip Mode persisting in in-game options menu
+  * Set backgrounddrawn to false when returning to pause menu
+  * Fix deltaframe tower BG flicker when exiting menu in H/V warp room
+  * Allow toggling invincibility/slowdown in intermission replays
+  * Only check Secret Lab/Time Trial/NDM for slowdown if ingame_titlemode
+  * Use returntomenu(timetrials) instead of returnmenu in timetrialcomplete3
+  * Make warpdir only re-draw BG if targeted room is current room
+  * Remove unnecessary middleman game.infocus
+  * Refactor KeyPoll::Poll() to use case-switch statements
+  * Fix resumemusic/musicfadein not working
+  * Remove unused/useless vars music.custompd/musicfade(in)/volume
+  * Fix Game::anything_unlocked() always evaluating to true
+  * Change a '||' to a '=='
+  * Refactor, de-duplicate, and clean up tilesheet processing
+  * Add bounds check to textbox functions that use `m`
+  * Add logs if a Graphics func was stopped from indexing OoB
+  * Add glitchrunner mode, in game options
+  * Re-enable unbounded gamestate increment in glitchrunner mode
+  * Don't hardreset() game.advancetext in glitchrunner mode
+  * Restore janky gamestate-based quit-to-title system in glitchrunnermode
+  * Un-hardreset certain variables for glitchrunner mode
+  * Un-fix hitbox persistence in map.resetplayer()
+  * Remove unused tmap vars from mapclass
+  * Fix the two-frame-delay when entering a room with an "init" script
+  * Add BlitSurfaceTinted()
+  * Add special case to color gray Warp Zone entities gray
+  * Disable two-frame delay fix in glitchrunner mode
+  * Reset width of player in mapclass::resetplayer()
+  * Display centiseconds on time trial result and Game Complete
+  * Refactor how custom level stats are stored, read, and written
+  * Use returns and don't have rest of loadcustomlevelstats in an 'else'
+  * Unindent loadcustomlevelstats from previous commit
+  * Don't gray out invincibility/slowdown in intermission
+  * Add being able to disable unfocus pause
+  * Fix Alt+Enter Glitch if not in glitchrunner mode
+  * Add "resize to nearest" graphics option
+  * Add Flip Mode to game options if in M&P or in-game menu and unlocked
+  * Don't selectively undraw tiles in towers if backgrounds are off
+  * Scan for trinkets and put them into shinytrinkets in customs
+  * Display trinkets on the minimap in custommode
+  * Don't set showtrinkets when loading custom quicksave
+  * Expose all 9 arguments of createentity()
+  * Adhere to "locked" gravity/warp lines
+  * Re-color one-way tiles to match their tileset
+  * Add bounds checks to drawforetile/drawforetile2/drawforetile3
+  * Only re-color one-ways if assets are not mounted
+  * Add being able to override the one-way recolor
+  * Add one-time OoB logs to tile-drawing functions
+  * Allow D-Pad to act as arrow keys in the editor
+  * De-duplicate track names
+  * Add binaryBlob::getExtra()
+  * Parse extra headers from binary blob
+  * Account for extra tracks in musicclass::play()
+  * Add bounds check to musicclass::play()
+  * Remove extraneous semicolon from MusicTrack::MusicTrack()
+  * If invalid `valid` value, set `valid` to false
+  * Fix pressing Enter moving you leftwards in the editor
+  * Read and write best time trial frames
+  * De-duplicate editor music name printing
+  * Allow using any editor song
+  * Add names for previously disallowed songs
+  * Make text() colors consistent with setblockcolour()
+  * Don't adhere to slowdown in MAPMODE/TELEPORTERMODE
+  * Fix deltaframe render glitch when spawning animated double-size entities
+  * Re-organize editor shortcuts logic
+  * Abstract tileset/tilecol/enemy switching to functions
+  * Allow using Space Station tilecol -1
+  * Add Shift+F1/F2/F3 hotkeys
+  * Refactor/de-duplicate entity text input
+  * Add G keybind to go to room
+  * Allow edentity terminals to use any sprite they want
+  * Fix wrong function being used to set color of coins
+  * Fix still being able to unlock things in custommode
+  * Use proper do-while for teleporter searching loop
+  * Fix infinite loop pressing left/right in tele menu w/ no teles unlocked
+  * Fix Map.cpp relying on editor.h to include Script.h
+  * Fix softlock from interrupted completestop
+  * Move tempword and currentletter off of scriptclass
+  * Make currentletter a char instead of an std::string
+  * Turn `words` into an array instead of an std::vector
+  * Add bounds checks to scriptclass::tokenize()
+  * Turn unlock/unlocknotify into plain arrays
+  * De-duplicate and use a macro for loading things into plain arrays
+  * Turn time trial stat vectors into plain arrays
+  * Turn crew rescued/mood vectors into arrays
+  * Turn obj.flags into an array instead of a vector
+  * Turn obj.collect and obj.customcollect into plain arrays
+  * Move temp and temp2 off of mapclass
+  * Move temp variable off of editorclass
+  * Move temp/temp2 off of UtilityClass, remove globaltemp
+  * Turn map.explored, map.roomdeaths(final) into plain arrays
+  * Turn areamap into plain array
+  * Turn map.contents into a plain array
+  * Turn tower vectors into plain arrays
+  * Remove unused vars from Graphics/GraphicsResources
+  * Turn star and backbox vectors into arrays
+  * Turn map.specialnames into an array instead of a vector
+  * Turn splitseconds into an array
+  * Statically allocate strings in UtilityClass::number()
+  * Turn fadebars into an array
+  * Turn ed.contents/vmult into arrays
+  * Turn (super)patrons/githubfriends into arrays & move them to new file
+  * Simplify m_headers init, hardcode 128 less
+  * Remove use of std::transform(), use SDL_toupper/lower
+  * Remove usage of std::string from MenuOption
+  * Use SDL_tolower() instead of libc tolower() in compare_nocase()
+  * De-duplicate Graphics::drawmenu() and Graphics::drawlevelmenu()
+  * Remove duplicate talkgreen_2 script and alarmon/alarmoff commands
+  * Make scriptclass::load(other) rely less on std::string
+  * Make std::string-using script funcs pass around const references
+  * Fix Vitellary looking left for one frame in "Now Stay Close To Me..."
+  * Initialize saveDir and levelDir in FileSystemUtils.cpp
+  * Remove unused vars relating to esc/keybuffer from KeyPoll
+  * Remove roomtext from otherlevelclass
+  * Remove block type enum from Otherlevel.h
+  * Move Roomtext struct to Map.h
+  * Remove unused <vector> include from Otherlevel.h
+  * Remove unused coin attributes from finalclass and warpclass
+  * Remove useless attribute rcol from finalclass
+  * Ensure that all member attributes are initialized
+  * Remove unnecessary string initializations from constructors
+  * Remove unused attribute advanced_mode from Game
+  * Remove duplicate advancetext/fullScreenEffect_badSignal initializations
+  * Remove unnecessary stub destructors
+  * De-duplicate gamestates 300..336
+  * Fix wrong Tower music when toggling Flip Mode from in-game options
+  * Fix being able to circumvent not-in-Flip-Mode detection
+  * Fix -playmusic command line option not working
+  * Don't remove non-player entities in scriptclass::hardreset()
+  * Fix missing newline on printf for customsavequick() failure
+  * Optimize 30-mode FPS loop to use SDL_Delay()
+  * Set script attribute of custom level script boxes
+  * Only set game.customscript if index is inbounds
+  * Directly execute scripts if script boxes have a non-empty script field
+  * Fix return to editor via crewmate rescue not using shouldreturntoeditor
+  * Set ed.keydelay to 6 when returning to editor
+  * Set ed.settingskey to true when returning to editor
+  * Use .clear() when removing text boxes in reset functions
+  * Allow pressing Enter on teleporters during playtesting
+  * Fix pressing Esc in teleporter menu going to quit screen
+  * Disable "Game Saved" text box in custommode
+  * Reset ed.notedelay when exiting playtesting
+  * Reset ed.roomnamehide to 0 when exiting playtesting
+  * Negate edentity room check and use a continue
+  * Unindent ending for-loop brace
+  * De-duplicate expressions of actual coordinates for edentities
+  * Clean up tsx/tsy initialization
+  * Unindent case labels in entity creation
+  * De-duplicate reference to edentity
+  * De-duplicate and add safety check to ed.level reference
+  * Add braces to case 12 custom level loading
+  * Fix 'break' statements in other cases not being inside braces
+  * Get rid of unnecessary roomname logic
+  * De-duplicate enemy/platform bounding box logic
+  * Use enum names instead of raw values in createblock() calls
+  * Use case-switch for warp line creation
+  * Fix and update comments for edentities
+  * Unindent case labels in room tileset case-switch
+  * Use case-switch for warpdir checking
+  * Fix brace style and spacing in custom loadlevel()
+  * Fix undeffing ARG_IS instead of ARG
+  * Fix softlock if exiting Super Grav and bringing up map in glitchrunner
+  * Wrap around enemy type when switching enemy types
+  * Fix softlock using tele while in its hitbox post-rescue/intermission
+  * Change all tilemaps to be short[1200] instead of int[1200]
+  * Consistently use angle brackets for SDL.h includes
+  * Use angle brackets for including tinyxml2.h
+  * Remove unnecessary includes from header files
+  * Remove unused time stuff from editor.cpp
+  * Remove unnecessary EditorData constructor stub
+  * Separate includes into sections and alphabetize them
+  * Set oldxp/oldyp when being teleported around during teleport
+  * Use INBOUNDS() check for mapclass::warpto()
+  * Set oldxp/oldyp when player teleports through warp token
+  * Don't savestats() every frame of New Record animation
+  * Add catch-all softlock protection
+  * Don't draw activity zone or trophy text when cutscene is running
+  * Ifdef out network code for M&P
+  * Remove unnecessary externs from network func forward decls
+  * Initialize bx1/by1/bx2/by2 in custom entity creation
+  * Fix bounding logic for enemies
+  * Move tele/activity/trophytext conds to collision detection
+  * Remove zeroed arrays from tower functions in M&P
+  * Print error and return if given invalid command-line arg
+  * Fix dupe stack frame when creating unlock notif menu
+  * Remove half-second delay when exiting to menu in glitchrunner mode
+  * Fix INBOUNDS() check for Graphics::drawtile3()
+  * Crop bottom tower spikes so they don't get drawn behind room name
+  * Remove unnecessary intersectRect() function
+  * Clean up superfluous no-intersection return logic
+  * Use SDL_max/min instead of std::max/min in Graphics::Hitest()
+  * Remove unnecessary cursor toggling when toggling fullscreen
+  * Ax OverlaySurfaceKeyed(), set proper foregroundBuffer blend mode
+  * Ax ScaleSurfaceSlow() in favor of ScaleSurface()
+  * Remove -1,-1 offset from ScaleSurface()
+  * Fix silent music saves playing MMMMMM track 15 if...
+  * Remove allowspecial, replace with opaqueness check
+  * Replace std::is[x]digit() with non-STL versions
+  * Add is_number()
+  * Add UtilityClass::Int()
+  * Replace all usages of atoi() with help.Int()
+  * Add fallback parameter to UtilityClass::Int()
+  * Fix basedir trailing path separator check
+  * Fix inefficient baseDir non-empty check
+  * Clean up strcat()s/strcpy()s, EXCEPT for migrateSaveData()
+  * Fix array decay in PLATFORM_getOSDirectory()
+  * Disable pressing R in No Death Mode
+  * Fix other array decay too
+  * Axe manual state trackers and use SDL_IsTextInputActive()
+  * Fix aggressive glitchrunner hardreset causing issues quitting to menu
+  * Check `valid` in binaryBlob::getIndex()
+  * Set `valid` to false if `size` is bogus
+  * Add bounds checks to getSize() and getAddress()
+  * Use SDL stdlib funcs for free/malloc/strcmp
+  * Check index of tracks in musicclass::init()
+  * Check divisor in musicclass::play()
+  * Check `rw` in musicclass::init()
+  * Remove script.hardreset() when restarting Time Trial
+  * Fix compatibility with levels that rely on gamestate-based script boxes
+  * Add custommode check to mapclass::twoframedelayfix()
+  * Move text entry start to script open instead of script list open
+  * De-duplicate activity zone rendering, don't ignore act_fade
+  * Fix 1-frame render glitch with running teleport scripts
+  * Remove checks to prevent having both warp lines/BGs in editor
+  * Fix sprite of player if they are stuck in a wall
+  * Move crewmate drawframe fix to entity creation instead of loadlevel
+  * Hoist Enter/Esc presses out of player entity for-loop
+  * Remove fademode conditional from map screen
+  * Hoist Enter check out of script.running clause
+  * Optimize entity collision checking to O(n)
+  * Prevent same-frame infinite loops in scripts
+  * Remove duplicate color-clamping code from Graphics::bigrprint()
+  * Use clamp() macro to clamp colors in Graphics::bigrprint()
+  * Axe endian_swap() function and template
+  * Axe SDL_BYTEORDER checks
+  * Don't hardcode SDL_CreateRGBSurface BitsPerPixel/mask args
+  * Restore entity-to-crewmate conversion trick
+  * Fix misleading indentation in obj.customwarpmode block
+  * Restore pre-2.1 warp bypass glitch in glitchrunner mode
+  * Fix duplicate levels in levelstats if you don't have a higher score
+  * Fix default Graphics::setcol() value having no alpha
+  * Allow calling flipgravity() on duplicate player entities
+  * Fix flipgravity() rule conversion being inverted
+  * Add kludge to fix rendering of gravity lines in a gotoroom
+  * Remove tzann's trailing whitespace from Graphics.cpp
+  * De-duplicate reading/writing main game telesave/quicksave
+  * De-duplicate spike hitbox checks for player/SCM
+  * De-duplicate vertical moving platform fix for player/SCM
+  * De-duplicate entity collision checks for player/SCM
+  * Use case-switch for entityclass::collisioncheck()
+  * De-duplicate stuck prevention for the player/SCM
+  * Rename INBOUNDS() macro to INBOUNDS_VEC()
+  * Reduce scope of temporary variables in Game::updatestate()
+  * Remove unused variable from gamestate 115
+  * Reduce scope of 'j' in screen transition companion logic
+  * Use explicit INBOUNDS_VEC() instead of checking sentinel -1
+  * Use SDL_arraysize() instead of writing out array length
+  * Don't manually write out INBOUNDS_VEC() checks
+  * Don't manually write out INBOUNDS_ARR() checks
+  * Don't hardcode 400 in editorclass::save()
+  * Bounds check all entity getters that can return 0
+  * Add bounds checks to both versions of Graphics::drawsprite()
+  * Fix up trinket and coin ID bounds checks
+  * Add bounds-check to entcolours in editor rendering
+  * Fix unwinnable save from rescuing Violet out of order
+  * Clear font_positions if there is no font.txt
+  * Fix brace style in Graphics::Makebfont() and Graphics::bfontlen()
+  * Add bounds checks to indexing of global "temporary" variable `k`
+  * Don't use bounds check for result of checktrigger(), it's a gamestate
+  * Don't use bounds check for checktrigger() in twoframedelayfix()
+  * Make 'custom_' check more readable
+  * Prevent undefined behavior with integer under/overflow with help.Int()
+  * Prevent typing pipes in the script editor
+  * Move all temporary variables off of entityclass
+  * Clean up and prevent unnecessary qualifiers to self
+  * Remove unused attributes from entclass
+  * Remove duplicate onroof/onground assignment for vertical moving plats
+  * Fix onground/onroof taking 1 frame after landing on vertical plat
+  * Fix spawning from an exotic checkpoint setting invalid gravitycontrol
+  * Fix inconsistencies with y-positions of spawns
+  * Revert "Fix #400"
+  * Don't hardcode MIX_MAX_VOLUME value of 128
+  * Clean up music handling to one place
+  * Use SDL_abs() instead of libc abs() in Logic.cpp
+  * Collapse and invert if-statements in entity logic loops
+  * Unindent entity update loops from previous commit
+  * Add entityclass::nocollisionat()
+  * Add entityclass::moveblockto()
+  * Restore platform evaluation order to 2.2
+  * Remove now-unused entityclass::hormovingplatformfix()
+  * Restore previous oldxp/oldyp variables in favor of lerpoldxp/lerpoldyp
+  * Fix glitchy y-position when colliding with a conveyor
+  * Disable nocollisionat() for conveyors
+  * Fix lerpoldxp/yp not being updated in setenemy and setenemyroom
+  * Re-add original oldxp/oldyp assignments in gotoroom()
+  * Factor out icon loading to Screen::LoadIcon()
+  * Reload window icon when mounting and unmounting assets
+  * Disable hardcoded (10,5) no-follow rule in custom levels
+  * Clean up bounds checks and style for customifflag/flag/ifflag/ifcrewlost
+  * Add 8 pixels of padding above and left of towerbuffer[_lerp]
+  * Fix tower background interpolation when scrolling from top
+  * Remove unused variable mapclass::towercol
+  * Remove now-unused function mapclass::RGB()
+  * Remove unused attribute Graphics::tl
+  * Move temporary bcol/bcol2 off of Graphics
+  * Fix copy-paste error with SetSurfaceBlendMode of towerbuffer_lerp
+  * Move check/cmode temporary vars off of mapclass
+  * Remove unused attributes author/description/title from editorclass
+  * Refactor tower background to use a separate object instead
+  * Move title usages of towerbg to titlebg
+  * Move horizontal/vertical warp backgrounds to separate buffers
+  * Remove kludge_to_bg() and bg_to_kludge()
+  * Add XMLUtils.cpp and XMLUtils.h
+  * Add XML forwards compatibility to levelstats.vvv
+  * Add XML forwards compatibility to unlock.vvv
+  * Add XML forwards compatibility to tsave.vvv and qsave.vvv
+  * Add XML forwards compatibility to custom level quicksaves
+  * Axe BoolToString() in favor of int casts
+  * Add XML forwards compatibility to custom level files
+  * Remember loaded custom level and read from it when saving
+  * Standardize on using reference to tilesvec/spritesvec instead of pointer
+  * Make some variables const in drawentities()
+  * Add bounds check to drawgravityline()
+  * Factor out entity drawing to separate function
+  * Unindent drawentity() from previous commit
+  * Add entclass::ishumanoid()
+  * Fix crewmates being drawn behind other entities
+  * Fix teleporter sprites sometimes being solid colors
+  * Don't unset Flip Mode when deleting all data in M&P
+  * Fix variables shadowing other variables
+  * Fix conveyor check in collisioncheck() always being true
+  * Fix oldreadytotele not being set in gotoroom()
+  * Fix style of showmousecursor boolean check
+  * Move all settings to settings.vvv
+  * Fix ACTION press processing on same frame as fade ticks to 0
+  * Fix niceplay() check having hardcoded number of MMMMMM tracks
+  * Change nicefade to bool instead of int
+  * Initialize nicechange to -1 for consistency
+  * Fix song 0/7 check using num_pppppp_tracks instead of num_mmmmmm_tracks
+  * Merge fadeoutqueuesong into nicechange
+  * Clean up don't-quick-fade signaling
+  * Add x-room = 13 check to entity 1 `behave` 13
+  * Use SDL_fmodf() instead of libc fmodf()
+  * Remove Game::shouldreturntopausemenu
+  * Remove unneeded tdrawback/backgrounddrawn assigns in returntopausemenu
+  * Remove unneeded titlebg assignments when going to in-game settings
+  * De-duplicate titleupdatetextcol() in gamecompletelogic()
+  * Interpolate scrolling in Analogue Mode filter
+  * Use SDL_abs() instead of libc abs() in ApplyFilter()
+  * Fix edentities not rendering at all in the editor
+  * Fix Prize for the Reckless moving platform losing its block when...
+  * Don't reset entire musicclass when mounting and unmounting assets
+  * Don't set music.usingmmmmmm to true when (un)loading custom assets
+  * Add commit hash and date to title screen
+  * Replace release mode conditional with OFFICIAL_BUILD
+  * Don't hardcode offset of interim commit print
+  * Factor out screen settings to ScreenSettings struct
+  * Remove duplicate screen configuration variables
+  * Remove duplicate using-MMMMMM variable from Game
+  * Remove game.gameframerate as duplicate of game.slowdown
+  * Remove duplicate game.controllerSensitivity proxy
+  * Maintain game.swnmode until all gravitron squares are offscreen
+  * Move all fixed-timestep render updates to new file RenderFixed.cpp
+  * Allow pressing ACTION to skip fake loading screen
+  * Refactor Game::savestats() to not use a default argument
+  * Allow Game::savestats() to accept a pointer to ScreenSettings
+  * Fix segfault when settings.vvv or unlock.vvv is missing
+  * De-duplicate script.running checks
+  * Fix kludge_ingametemp being assigned after menu creation
+  * Don't recompile all files when the commit hash is changed
+  * Update commit hash every time it changes, not just when CMake is re-ran
+  * Use SDL_arraysize() - 1 to take length of INTERIM_COMMIT
+  * Add official, M&P, no custom levels, and no editor builds to CI
+  * Consistently set lifeseq to 0 when startgamemode() is called
+  * Fix no-draw frames when exiting a level with custom assets
+  * Fix player being invisible upon loading into game again
+  * Reset invis and lifeseq when loading in, in mapclass::resetplayer()
+  * De-duplicate menu animation code when bringing up map screen
+  * Fix bringing up map menu during gamemode(teleporter)
+  * Remove unused function FlipSurfaceHorizontal()
+  * Remove unused function Graphics::PrintOff()
+  * Remove unused function Graphics::RPrint()
+  * Remove unused function Graphics::drawentcolours()
+  * Remove unused function edentclear()
+  * Remove unused function entityclass::fixfriction()
+  * Remove unused function KeyPoll::isUp()
+  * Remove unused function editorclass::placetile()
+  * Remove unused function SoundSystem::playMusic()
+  * Remove unused function Graphics::textboxcenter()
+  * Remove unused function Graphics::textboxmove()
+  * Remove unused function editorclass::warpzoneedgetile()
+  * Remove unused function editorclass::warpzonematch()
+  * Fix whitespace inconsistency in musicclass::play()
+  * Invert currentsong check and un-nest rest of function
+  * Invert t comparison with -1 and un-nest rest of function
+  * Unindent musicclass::play() from previous two commits
+  * Revert hardcoded check for track 6 when quitting to menu
+  * Fix regression with playing the same track after it fades out
+  * Move title screen color initialization to main()
+  * Move mapclass r/g/b variables off onto TowerBG
+  * Fix Shift+F1 from Space Station tileset not switching to Ship
+  * Fix Secret Lab Time Trial trophies having wrong colors
+  * Fix attempts to place enemy/plat bounds & scripts with bad corner order
+  * Move gamerenderfixed() in between gameinput() and gamelogic()
+  * Clean up unnecessary exports and add static keywords
+  * Add F9 "reload resources" hotkey to list of hotkeys in Shift menu
+  * Remove map.finalx/y and map.customx/y
+  * Remove game.savemystats
+  * Fix editor tool menu inconsistencies
+  * Reduce dependency on libc functions
+  * Disable unneeded LodePNG features
+  * Initialize bcol and bcol2 in Graphics::drawbackground()
+  * Disable MSVC warnings about implicit conversion
+  * Remove LODEPNG_NO_COMPILE_ZLIB
+  * Fix wrong function being used for musicclass::play() check
+  * Remove commented-out code from gamestates 3101 and 3500
+  * Clean up all exit paths to the menu to use common code
+  * Fix Time Trial results being reset before being shown
+  * Fix No Death Mode results being reset before being shown
+  * Free data upon failure in LoadImage()
+  * Remove duplicate graphics.Makebfont() in main()
+  * Improve support for retextured checkpoints and terminals in the editor
+  * Revert "Fix glitchy y-position when colliding with a conveyor"
+  * Re-fix glitchy y-position when spawning onto a conveyor
+  * Remove commented-out code in Game::gameclock()
+  * Remove unused cctype #include from UtilityClass.cpp
+  * Remove comment from GCChar()
+  * Add constness to GCChar() input and switch position of asterisk
+  * Use case-switch inside GCChar() instead of if-else tree
+  * Refactor ss_toi() to not use stringstreams
+  * Pass input of UtilityClass::GCString() by const reference
+  * Remove commented-out "version 1" code from editorclass::load()
+  * Clean up script header check in editorclass::load()
+  * Don't mutate the decimal place in ss_toi()
+  * Give static storage duration to radix in ss_toi()
+  * Fix out-of-bounds indexing with malformed XML entities in find_tag()
+  * Fix unreachable code warnings
+  * Unconditionally free and zero in binaryBlob::clear()
+  * Tidy up binaryBlob initialization to use SDL_zeroa()
+  * Remove grphx.init() from Graphics::init()
+  * Fix brace style of Graphics::reloadresources()
+  * Remove making new GraphicsResources object in reloadresources()
+  * Move Graphics cleanup to new function Graphics::destroy()
+  * Add Graphics::destroy_buffers()
+  * Move Graphics buffer creation to new func create_buffers()
+  * Fix brace style of Graphics::font_idx()
+  * Move musicclass cleanup to separate function musicclass::destroy()
+  * Refactor TRACK_NAMES to take in a blob parameter
+  * Separate musicReadBlob into mmmmmm_blob and pppppp_blob
+  * Clear musicWriteBlob after writing BinaryMusic.vvv
+  * Add Screen::destroy()
+  * Fix FIXME comments with outdated referents in Screen.cpp
+  * Move cleanup code to separate function
+  * Guard PHYSFS_deinit() with PHYSFS_isInit()
+  * Free base tilesheet image after processing it
+  * Add NULL guards to Game::savestats() and savesettings()
+  * Clean up all leftover resources in cleanup()
+  * Add VVV_exit()
+  * Move Script.cpp <limits.h> #include to proper place
+  * Remove <string.h> #include from main.cpp
+  * Clean up all program close paths to use VVV_exit()
+  * Bail for all SDL_malloc() failures
+  * Unconditionally call FILESYSTEM_freeMemory() in SoundTrack constructor
+  * Check if file can't be loaded in SoundTrack::SoundTrack()
+  * Pass 1 to Mix_LoadMUS_RW() in MusicTrack::MusicTrack()
+  * Free loaded file in editorclass::getLevelMetadata()
+  * Fix reading uninitialized memory when creating Menu::levellist
+  * Refactor editor gotoroom shortcut to not use split()
+  * Move LOAD_ARRAY[_RENAME] macros to before loadcustomlevelstats()
+  * De-duplicate <customlevelscore> loading to use LOAD_ARRAY_RENAME()
+  * Remove indentation level from checking for empty pText
+  * Unindent from collapsing empty pText check
+  * Clean up whitespace in script XML parsing code
+  * Clean up comments in script XML parsing code
+  * Clean up resetting editor contents and scripts
+  * Remove unneeded comments from scriptclass::scriptclass()
+  * Refactor loading arrays from XML to not use the STL
+  * Remove unnecessary static_casts in is_positive_num()
+  * Remove unnecessary static_cast in is_number()
+  * Make const the 'hex' argument of is_positive_num()
+  * Refactor is_positive_num() to use C-strings
+  * Fix is_positive_num() returning true for empty strings
+  * Fix is_number() returning true for empty strings
+  * Change is_number() iterator type to size_t
+  * Change is_number() increment to pre-increment
+  * Add a blank line to the end of is_positive_num()
+  * Add a blank line to the end of is_number()
+  * Fix is_number() accepting "-" as a number
+  * Fix VVV_isxdigit() accepting A-Za-z instead of A-Fa-f
+  * Fix using ii instead of i in script serialization
+  * Fix entity and block indices after destroying them
+  * Add option to not use bundled TinyXML-2, PhysFS, and UTF8-CPP
+  * Refactor extra binary blob tracks to not use STL data marshalling
+  * Add static keywords to replace_all and tag finder funcs
+  * Remove hardcoded check for "data" in level dir listing
+  * Contextualize PHYSFS_mountHandle() failure output
+  * Refactor level dir listing to not use STL data marshalling
+  * Print if PHYSFS_enumerate() has an error
+  * Fix potential out-of-bounds in next_split_s() wrt buffer length
+  * Remove assigning block type to -1 when disabling them
+  * Remove unneeded <algorithm> includes
+  * Explicitly declare void for all void parameter functions (#628)
+  * Remove commented-out code from Graphics.cpp and GraphicsUtil.cpp
+  * Add ClearSurface()
+  * Fix two versions of FillRect() unnecessarily creating SDL_Rects
+  * Combine declaration/initialization of color in two FillRect()s
+  * Change all surface-clearing FillRect()s to use ClearSurface()
+  * Use SDL allocators for PhysFS
+  * Replace all SDL_RWFromMem() with SDL_RWFromConstMem()
+  * Refactor endsWith() to not use the STL
+  * Remove std::strings from levelZipCallback()
+  * Use less STL when loading entity XML elements
+  * Remove unneeded pKey when loading room property XML elements
+  * Fix up log messages in FILESYSTEM_mountassets()
+  * Don't export FILESYSTEM_directoryExists()
+  * Rename FILESYSTEM_directoryExists() to FILESYSTEM_exists()
+  * Refactor FILESYSTEM_mount[assets] to not use the STL
+  * Remove "data" checks from FILESYSTEM_mountassets()
+  * Add comment to magic numbers in FILESYSTEM_mountassets()
+  * Fix transitive includes in Screen.cpp
+  * Remove unused x and y attributes of blockclass
+  * Fix regression with background of level minimaps not being black
+  * Fix return value of PHYSFS_fileLength() being stored in a smaller size
+  * Set length to 0 if PHYSFS_fileLength() is negative
+  * Fix return value of PHYSFS_readBytes() being stored in a smaller size
+  * Abstract zip loading to FileSystemUtils
+  * Add FILESYSTEM_isFile()
+  * Ignore directories when loading level metadata
+  * Add FILESYSTEM_isMounted()
+  * Ignore zip files in level metadata loading
+  * Add previous song option to editor music screen
+  * Keep currentmenuoption if it's the same menu
+  * Remove unnecessary currentmenuoption reassignments
+  * Remove music.niceplay() when returning from credits6
+  * Fix returning from game pad options not updating tower color
+  * Fix regression being able to activate activity zones during cutscenes
+  * Move activity prompt render updating to gamerenderfixed()
+  * Fix prompt fade out when activating overlapping zones
+  * Reverse menu animation direction in Flip Mode
+  * De-duplicate surface recreation in GraphicsUtil
+  * Copy blend mode to recreated surface
+  * Fix up/down being reversed in in-game menu in Flip Mode
+  * Don't use std::strings when comparing key names
+  * Move assetdir off of Graphics
+  * De-duplicate one-way recolor conditional
+  * Add FILESYSTEM_isAssetMounted()
+  * Make one-way recolors check for specific files
+  * Fix transitive includes in GraphicsUtil.cpp
+  * Use SDL_floor() instead of libc floor()
+  * Fix glitchy behavior switching soundtracks on silence
+  * De-duplicate toggling flip mode in Input.cpp
+  * Fix MMMMMM and Flip Mode options ignoring save failure
+  * Make saveFilePath not an std::string
+  * De-duplicate number of menu text bytes
+  * Move gravity line correction to editorrenderfixed
+  * Move Direct Mode drawer close to editorrenderfixed
+  * Move room name hiding update to editorrenderfixed
+  * Interpolate Direct Mode drawer closing
+  * Reset drawer timer if not in Direct Mode room
+  * Reset room name hide timer if in an unnamed room
+  * Move resumesong assignment to songend()
+  * Directly toggle fullscreen if keybind pressed in key.Poll()
+  * Add SDL2 version number to desktop_version/ README
+  * Inline cutscene bars timer for gamemodes that used it in 2.2
+  * Fix VVVVVV-Man not being interpolated
+  * Add being able to press Esc to return to previous menu
+  * Add graphic options and game options to editor settings
+  * Fix a few missing implicit void arg declarations
+  * Ensure oldcutscenebars is updated when cutscenebarspos is
+  * Ensure oldfadeamount is updated when fadeamount is
+  * De-duplicate Flip Mode text printing
+  * De-duplicate Flip Mode textbox crewmate rendering
+  * De-duplicate Gravitron initial message
+  * Remove commented-out code from Game.cpp and Script.cpp
+  * Remove default arguments from createtextbox()
+  * De-duplicate Level Complete sequence textboxes
+  * De-duplicate "Game Saved" telesave textbox
+  * Remove unused x/y textboxclass attributes
+  * Remove textrect attribute from textboxclass
+  * Add flipme attribute to textboxclass
+  * Add createtextboxreal() and createtextboxflipme()
+  * Switch all flippable text boxes to use createtextboxflipme
+  * Switch flipme script command to use flipme textbox attribute
+  * Make foundtrinket() Flip Mode-aware
+  * Remove special text box checks for y-position 180
+  * Generalize game loop order and fix it to what it was in 2.2
+  * Unindent unfocused_run() and focused_begin() from previous commit
+  * Remove script.dontrunnextframe kludge
+  * Move updating lerpoldxp/yp to start of gamelogic()
+  * Remove gravity line kludge from Graphics::drawgravityline()
+  * Remove now-unneeded deltaframe fix when going to in-game settings
+  * Update player lerpoldxp/yp in gotoposition()
+  * Add deferred callbacks to game loop
+  * Update player lerpoldxp/yp in moveplayer()
+  * Remove game.shouldreturntoeditor in favor of using defer callback
+  * Fix 1-frame text glitch returning to pause menu from in-game options
+  * Fix 1-frame text glitch when returning to editor settings from options
+  * Fix 1-frame background glitch when returning from in-game options
+  * Fix 1-frame glitch when going to in-game options from edsettings
+  * Remove entityclass::createentity() deltaframe kludge
+  * Re-fix crewmate directions (without copy-pasting)
+  * Move key.Poll() calls to just before input funcs
+  * Re-remove 1-frame input delay
+  * Split onground/onroof into visual and logical variables
+  * Move logical onground/onroof updates to start of gamelogic
+  * Fix filter/screenshake/flash update order
+  * Remove now-unneeded kludge for finalmode entity colors
+  * Add braces around sub-object in unfocused_func_list
+  * Fix text box deltaframe flashing on deltaframes after fully opaque
+  * Remove game.gametimer in favor of game.frames
+  * Add period to text outline description
+  * Capitalize "OFF" when invincibility is off
+  * Add missing pText NULL checks
+  * Initialize temporary edentity when loading levels
+  * Fix bounds checks in drawentity()
+  * Refactor tiles to use setter and getter functions
+  * Add bounds checks to tile setter and getters
+  * Refactor room properties to use setter and getter funcs
+  * Add bounds checks to room propety getters and setters
+  * Refactor explored rooms to use setters and getters
+  * Add bounds checks to room explored getter and setter
+  * Remove 2.3 example from pull request template
+  * Add bounds check for color of createentity number 55
+  * De-duplicate warp line creation in createentity()
+  * Fix 1-frame flicker entering room with warp lines and entity on edge
+  * De-duplicate setting mainmenu and fademode
+  * Decouple fademode from starting gamemode
+  * Set fademode to temp 0 when going to in-game options
+  * Remove mainmenu from Game
+  * Fix background not changing when pressing Esc on main menu
+  * Fix targets (question marks) not showing up on minimap
+  * Fix memory leak when pasting text
+  * Replace other usage of PHYSFS_getBaseDir() with SDL_GetBasePath()
+  * Fix tile of disappearing platforms during final stretch
+  * Fix oversight with unfocus pause screen in Flip Mode
+  * Outline textboxless textboxes
+  * Add Graphics::bigbprint()
+  * Add Graphics::bigrprint()
+  * Outline all gravitron text
+  * Call VVV_exit() when SDL_QUIT is received
+  * Fix funcs not being reassigned if delta func is last func in list
+  * Add period to glitchrunner mode description text
+  * Remove advancetext check from teleporter prompt logic
+  * Add option to re-enable 1-frame input delay
+  * Factor timestep calculation out to Game function
+  * Factor fade amount calculation to separate function
+  * Add pause(), pauseef(), and resumeef() to musicclass
+  * Re-fix resumemusic/musicfadein once again
+  * Un-export FILESYSTEM_mount()
+  * Return early if FILESYSTEM_mountassets() fails
+  * Properly camel-case FILESYSTEM_[un]mountassets()
+  * Use FILESYSTEM_mount() when mounting zips
+  * Rename FILESYSTEM_mount() to FILESYSTEM_mountAssetsFrom()
+  * Remove getDirSeparator() usage from mountAssetsFrom()
+  * Remove redundant getDirSeparator() calls in init()
+  * Remove default argument from loadFileToMemory()
+  * Add FILESYSTEM_loadAssetToMemory()
+  * Replace asset load calls with loadAssetToMemory()
+  * Add filename to mountAssetsFrom() error message
+  * Switch assets mounting to dedicated directory
+  * Blacklist non-.vvvvvv files in level metadata
+  * Fix whitespace from eee98b0e071507a80e9ceec55eb29ca87a102319
+  * Clean up unused vars/funcs from eee98b0e071507a80e9ceec55eb29ca87a102319
+  * Use macros to calculate accessibility offset
+  * Fix level list segfault when upgrading old levelstats.vvv
+  * Fix softlocks from mistimed trinket text skip
+  * Reset completestop in hardreset
+  * Fix softlocks from turning off advancetext at wrong time
+  * Fix returning from confirm quit menu putting cursor on options
+  * Fix incorrect return code from game options and graphic options
+  * Add VVV_fillstring()
+  * Add audio category to options menu
+  * Add music and sound volume config options
+  * Implement music and sound volume sliders
+  * Set currentsong to -1 when halting music
+  * Don't restart music in trinket cutscenes
+  * Silence music instead of halting in foundtrinket
+  * Ensure all fade-ins start from zero
+  * Fix 1-frame glitch when fading in from zero
+  * Reset fade booleans when halting music
+  * Process queued music after processing fades
+  * Factor out mount path calculation to separate function
+  * Fix isAssetMounted not using virtual mount path
+  * Abstract binary blob loading to FileSystemUtils
+  * Fix music files not using virtual mount path
+  * Remove time trial replay menu stack popping
+  * Don't reset timetrialparlost every frame during countdown
+  * De-duplicate zeroing the game clock
+  * Don't tick timer if in time trial countdown
+  * Don't process music, fades, or timer when unfocused
+  * Don't ditch frames when loading saves
+  * Fix vertically-warping entities being drawn with wrong offset
+  * Increase threshold for drawing top entities at bottom of screen
+  * Fix wrong variable being bounds-checked when collecting trinket
+  * Reset cliplaytest when exiting to menu and check it when loading
+  * Add bounds check to use of edteleportent
+  * Fix bracing of time trial startgamemode
+  * Revert part of "Fix music stopping when restarting time trial"
+  * Fix playing same track after it has faded out
+  * Add -Wpedantic to GCC/Clang in CMakeLists
+  * Remove extra semicolon from end of Credits namespace
+  * Lowercase function calls in CMakeLists
+  * Remove redundant C++ standard sets from CMakeFiles
+  * Change cache bool variables into options
+  * Add CMake version guard around setting C++ standard
+  * Use multiline comments in C files
+  * Set C standard to C90 in CMake file
+  * Switch SDL2 includes to be private
+  * Don't pollute global includes/defines namespace
+  * Remove usage of undefined variable PFSP_SRC
+  * Use booleans for SUPPORTS_IMPLICIT_FALLTHROUGH
+  * Disable exceptions and RTTI in CMakeLists
+  * Axe mouse cursor config option
+  * Show and hide mouse cursor based on user input
+  * Make map.[old]ypos ints instead of floats
+  * Remove customlevelstatsloaded from Game
+  * Change all createentity args to be ints
+  * Remove default function args from createentity()
+  * Rename vx/vy createentity args to meta1/meta2
+  * Consistently play Viridian squeak for pause menu inputs
+  * Fix missing colon in prompt when placing terminal
+  * Fix duplicating ed_settings when opening editor menu second time
+  * Remove unnecessary Sint16 casts
+  * Don't mix code and decls in SoundTrack constructor
+  * Don't mix code and decls in loadFileToMemory()
+  * Transfer param init responsibility to loadFileToMemory
+  * Add NULL checks to FILESYSTEM_loadFileToMemory()
+  * Fix missing return statements in drawsprite()
+  * Fix dereferencing NULL if image fails to load
+  * Add asserts for missing images and sound effects
+  * Pass size of output through instead of hardcoding it
+  * Add error checking to base path setup
+  * Draw minimap.png if it is mounted
+  * Quote CMAKE_CXX_FLAGS
+  * Remove use of <algorithm> from editor.cpp
+  * Fix only removing duplicate script names from script name list
+  * Add NULL checks and asserts to graphic options
+  * Move graphic options menu update to toggleFullScreen
+  * Clean up style of room wrap for-loops
+  * Invert and use continue in room wrap for-loops
+  * Unindent room wrap for-loops from previous commit
+  * Fix rescuable crewmates not warping
+  * Fix VVVVVV-Man not warping horizontally
+  * Fix fade volume durations being incorrect
+  * Reset fade booleans when starting music
+  * Call Mix_VolumeMusic() when playing tracks 0 and 7
+  * Fix two places with map.oldypos not being assigned
+  * Fix background smearing pushing tower camera with invincibility
+  * Consolidate tower BG bypos and bscroll assignments
+  * Factor out Secret Lab/Time Trial/NDM conds to function
+  * Factor out slowdown/invincibility conds to function
+  * Move Secret Lab nocompetitive check to Super Gravitron
+  * Don't allow setting Super Gravitron records in custom levels
+  * Don't allow setting best game deaths in custom levels
+  * Enable returning to Secret Lab immediately from Super Gravitron
+  * Remove final_colorframe assignments when entering minitowers
+  * Add finalmode check to drawfinalmap call
+  * Allow using Esc in Super Gravitron quit menu
+  * Fix 1-frame glitch returning from in-game options with Flip Mode on
+  * Fix deltaframe glitch when spawning No Death Mode trophy
+  * Change final stretch song to Piercing the Sky
+  * Don't update crewmate colors in text boxes every deltaframe
+  * Separate pressing Enter to open map from pressing Enter to interact
+  * Fix tower camera invincibility inconsistencies
+  * Save showtargets to main game save files
+  * Fix Super Gravitron pattern oversight
+  * Set newxp/newyp when creating player
+  * Factor out base 36 generation to separate function
+  * Factor out UNUSED macro to header file
+  * Factor out "between" calculation to macro and func
+  * Add zip structure checks for user friendliness
+  * Play Viridian squeak when editing level desc fields
+  * Save settings after changing controller keybind
+  * Play Viridian squeak when updating controller keybinds
+  * Fix being able to see box corners on map screen with custom graphics
+  * Prevent losing level data with rollcredits
+  * Interpolate gravitron square indicators
+  * Use memset to give 20 trinkets and explore all rooms
+  * Explore all rooms when entering Secret Lab
+  * Outline time trial countdown
+  * Use hiddenname for hardestroom if roomname is empty
+  * Fix being able to start flipped in time trials
+  * Play Viridian squeak when using return button in audio options
+  * Outline text outline text and draw backing
+  * Set visualonroof/visualonground to 1 on vertical platforms
+  * Re-add playtesting passthrough code block for non-separate interact
+  * Custom levels: only count inbounds trinkets/crew
+  * Fix wrong bounds check when colliding with activity zones
+  * Fix regression: quick stopping changing drawframe
+  * Fix zip structure checks checking for wrong filename
+  * Fix generateBase36 generating more than base 36
+  * Play Viridian squeak when returning to Secret Lab
+  * Play Viridian squeak when returning to Super Gravitron
+  * Play Viridian squeak when pressing Esc in teleporter menu
+  * Split glitchrunner mode into multiple versions
+  * Play Viridian squeak when exiting to menu
+  * Don't lerp when drawing all-sides warp background
+  * Don't take editor input when fading out
+  * Save stats when setting stat_trinkets
+  * Always reset player when starting gamemode
+  * Fix trailing whitespace introduced by lssa
+  * Fix frame flickers when fading during loads/exits
+  * Fix cycling title BG more than once per frame
+  * Fix regression with chunky pixels being the wrong color
+  * Zips: Don't print redundant message if file not found
+  * Enforce semicolons after usage of WHINE_ONCE
+  * Do not close game if fallback character is missing
+  * Disable final color animations if screen effects off
+  * Add unfocus audio pause option
+  * Add fallthrough macro
+  * Add graphics wrapping functions
+  * Do not close game if custom level has assets issues
+  * Display improper zip structure message to non-console users
+  * Save showtrinkets to custom level quicksaves
+  * Allow getting star if more trinkets than level trinkets
+  * Editor: Play Viridan squeak when entering a script
+  * Don't show next/previous page options if only one page
+  * Cycle tower color if loading level has error
+  * createentity command: Actually have p1/p2/p3/p4 defaults
+  * tokenize(): Check all arguments
+  * Account for lack of prev/next options if only one page of levels
+  * Remove level menu rendering code in NO_CUSTOM_LEVELS builds
+  * Remove unused dir string
+  * Revert "Fix loading levels that are... uh, just levels."
+  * Don't use PHYSFS_getRealDir() to check for .zip
+  * If loaded level assets fail to mount, print message to non-console users
+  * Add being able to delete a custom level quicksave
+  * Add option to delete all custom level save data
+  * Fix regression with platv values not parsed as 2.2-and-prev
+  * Fix regression with regaining focus resuming music
+  * Wrap level dir enumerate callback pointer in struct
+  * Fix enemy movement types 10/12 causing memory leaks
+  * Fix up style in musicclass::play()
+  * Fix regression with niceplay() moving back and forth between zones
+  * Make fade out duration proportional to volume
+  * Set Secret Lab/Super Gravitron hidden names
+  * Replace main game music with music area map
+  * Increment total flips for flip tokens and flipgravity(player)
+  * Remove default arguments from ed switch_* funcs
+  * Refactor warp dir switching to separate function
+  * Add being able to use Shift+W to change warp dir backwards
+  * Add being able to use Lab rainbow background in editor
+  * Don't assume tilesheet size in Direct Mode
+  * Allow custom levels to use 2 billion tile numbers once again
+  * Actually finally fix createentity default args
+  * Update license exceptions last updated date
+  * Add Visual Studio string list
+  * Update Misa's name in credits
+  * Fix missing at-symbols on people in CONTRIBUTORS.txt
+  * Add Elijah Stone's GitHub handle to CONTRIBUTORS.txt
+  * Alphabetically sort contributors by first name, not last
+  * Add KyoZM to Credits.h
+  * Add Vee to credits
+  * Fix positioning of "Thanks for playing!"
+  * Update comments about contributor ordering
+  * Reset words array in hardreset()
+  * Add -A Win32 flag to README
+  * Replace Gravitron RNG with seeded Xoshiro
+  * Fix enemy/plat bounds not being drawn if any side touches a screen edge
+  * Reset obj.customscript in hardreset()
+  * Move roomchangedir off of Game
+  * Move linecrosskludge off of entityclass
+  * Move roomchange off of Game
+  * Axe screen_transition variable in favor of roomchange
+  * Axe save file migration
+  * Fix destroy(platforms), implement under different names
+  * Don't hardcode destroy() arguments in loadcustom()
+  * Bump version to 2.4
+  * Fix not-Flip-Mode flag turning off when returning from options menu
+  * Make PhysFS RWops work with `-DBUNDLE_DEPENDENCIES=OFF`
+  * Suppress unused `i` warning if `NUM_BACKENDS` is 0
+  * Move Misa to C++ credits
+  * Fix Pauli Kohberger's name stopping being drawn too early
+  * Add logging functions
+  * Replace all print calls with vlog calls
+  * Add colors to logging
+  * Add command-line options to force-enable/disable color
+  * Allow disabling output/fine-tuning output
+  * Add debug logs
+  * Replace some info logs with debug logs
+  * Simplify Flip Mode rendering code with SDL_RenderCopyEx
+  * De-duplicate quick/telesummary fetching in Game::init()
+  * De-duplicate loadsummary parsing and move to different function
+  * Remove superfluous message if settings.vvv/unlock.vvv don't exist
+  * Simplify and print XML errors from TinyXML-2
+  * Move editor functions to separate file
+  * Rename editor.h to CustomLevels.h
+  * Move editor functions to separate header
+  * Remove contents memset from editorclass constructor
+  * Remove getLevelDirFileNames() from editorclass
+  * Remove comment from top of editorclass
+  * Move all editor-specific attributes to a new editorclass
+  * Fix number of spaces of indentation of CustomLevels.h
+  * Rename edlevelclass to RoomProperty
+  * Rename cl.level to cl.roomproperties
+  * Rename edentities to CustomEntity
+  * Rename edentity to customentities
+  * Remove EditorData and put its attributes on customlevelclass
+  * Call teleporterrenderfixed in TELEPORTERMODE
+  * Prevent user-initiated map menu changes during menu animations
+  * gamemode(teleporter): Set gamestate to GAMEMODE
+  * Add message when player is kicked out of Super Gravitron
+  * Only reset fade booleans when music is actually played
+  * Don't use `map.extrarow` for menu animations
+  * Use `resumegamemode` to track menu animation
+  * Don't check `map.extrarow` when opening map
+  * Use `SDL_BlitScaled` in `ScaleSurface`
+  * Use drawtextbox() to draw text boxes
+  * drawpixeltextbox: Don't use unneeded variables
+  * drawpixeltextbox: Draw remaining horz/vert tile if non-multiple-8
+  * Axe drawcustompixeltextbox in favor of drawpixeltextbox
+  * drawpixeltextbox: Remove now-unused parameters
+  * drawtextbox: Use drawpixeltextbox
+  * Clean up style of drawtextbox/drawpixeltextbox
+  * Clean up style of drawcoloredtile
+  * Move `max` off of `textboxclass`
+  * Remove useless variable `lw` from `textboxclass`
+  * Remove unused `SDL.h` include from `Textbox.h`
+  * Remove redundant FillRect when drawing text boxes
+  * `drawgui`: Don't declare loop vars in `for` initializers
+  * Textboxes: Don't use separate RGB variables
+  * De-duplicate text printing functions
+  * Use `const std::string&` where possible in function params
+  * Add `changerespawncolour()` script command
+  * Rename `respawncolour` to `savecolour`
+  * Untabify every single file
+  * `bprintalpha`: Call `PrintAlpha` with a false `cen`
+  * Fix surface color masks
+  * Simplify clearing surface in preloader with ClearSurface()
+  * Fix all FillRect getRGB calls to be passed in RGB order
+  * Remove getBGR
+  * Fix unused variable warning on non-Emscripten
+  * Fix dying during collection prompt persisting effects
+  * Don't touch music when completing custom level
+  * Don't check `!muted` when fading music after completion prompt
+  * Fix platv values outside map size being saved as 67372036
+  * Reset fade booleans when silencing music
+  * Reset some stats that weren't being reset in deletestats
+  * Kludge-fix being able to play music in editor
+  * Move `Mix_PausedMusic()` call into wrapper function
+  * Music: Do not do fades if not playing
+  * Remove useless arguments from drawimagecol()
+  * Axe `RGBflip()` in favor of `getRGB()`
+  * Remove unused or useless `SDL_Rect`s from `Graphics`
+  * Remove `scmmoveme`
+  * Fix regression with companions not spawning
+  * Replace `setblockcolour()` argument with `const char*`
+  * Replace roomnames/hiddennames/glitchnames with `const char*`
+  * Rename `textbox` to `textboxes` and textbox `line` to `lines`
+  * Replace hardcoded temp buffer sizes with a named constant
+  * Avoid function call to check empty room name
+  * Fix VSync renderer workaround
+  * Remove `<stdio.h>` include from `SteamNetwork.c`
+  * De-duplicate Steam network function list
+  * Name the return types `rettype` instead of `retval`
+  * Don't use print formatting for hardcoded strings
+  * Use stub types instead of `intptr_t`
+  * Axe `NETWORK_`[`set`/`get`]`AchievementProgress()`
+  * Move Emscripten includes to top of `main.cpp`
+  * Declare `emscriptenloop` as `static`
+  * Rewrite STDIN loading to not use STL
+  * Add noreturn qualifier to `VVV_exit`
+  * Remove unused Steam `GetStat`/`SetStat`
+  * Use `SDL_isxdigit()` in favor of `VVV_isxdigit()`
+  * Update `Dockerfile` to SDL 2.0.16
+  * Update CentOS CI container used to Misa's container
+  * Fix regression from 2.3 with `destroy(platforms)`
+  * Ifdef `numberofHeaders` out if not compiling music
+  * Use fixed-size int types for resourceheader
+  * Fix regression with `VVV_COMPILEMUSIC` aborting
+  * Mark `VVV_exit` implementation as `VVV_NORETURN`
+  * Declare Windows `mkdir` as `static`
+  * Remove Ethan's binary-or comment
+  * Remove `splitseconds` lookup table and inline it
+  * Remove commented-out old spike block code
+  * Fix trailing whitespace in `CustomLevels.h`
+  * Remove `vmult` lookup tables
+  * Remove overcomplicated integer divisions
+  * Add `POS_MOD` macro and use for all positive modulos
+  * Update SDL version in `README.md` to 2.0.16
+  * Rename `number` to `number_words`
+  * Fix winning in No Death Mode saying "One trinkets"
+  * De-duplicate map menu stats screen rendering code
+  * Use `SDL_NORETURN`
+  * Mark all vlog functions with printf attributes
+  * Remove unused `math.h` include from `Maths.h`
+  * Fix `SCREEN_HEIGHT_PIXELS` being wrong constant
+  * Account for heights in the `FLIP` macro
+  * `PrintWrap`: Account for height in Flip Mode
+  * Simplify flipme text box position correction
+  * De-duplicate map menu quicksave screen
+  * Add impossible message for quicksave screen in time trials
+  * Make impossible time trial save screen message less verbose
+  * Remove outdated FIXMEs from `Screen.cpp`
+  * Fix regression with tile 10 not having nothing behind it
+  * Fix regression with per-pixel collision colors
+  * Remove space at end of Press %s to Teleport
+  * Silence GCC warnings about `void*`-to-function-pointer casts
+  * Fix regression with counting out-of-bounds custom entities
+  * Fix regression with rainbow lab BG in editor
+  * Don't toggle VSync twice
+  * Switch over to using `SDL_GetTicks64()`
+  * Use `SDL_FALLTHROUGH` if available
+  * `README.md`: Link to #618 for old Ubuntu versions
+  * `LoadImage`: Check LodePNG return value and print errors
+  * Fix elephant placement across rooms
+  * Remove game.door_left/right/up/down variables
+  * Don't go back to main menu when deleting main game save data
+  * `deletestats`: Properly reset `bestgamedeaths`
+  * Pull out fade mode handling into separate function
+  * Add asserts if `ingame_titlemode` in unexpected places
+  * `hardreset`: Reset `ingame_titlemode`
+  * Change all game-gamestates to use an enum type
+  * Remove unused game-gamestates
+  * Fix in-game timer going away after playing Super Gravitron
+  * Add centiseconds to timer overlays
+  * Outline trophy text
+  * Outline "NO SIGNAL"
+  * Fix warp sprites of big sprites sometimes not being drawn
+  * Fix regression with wall stuck flipping behavior exactly reversed
+  * Hide level path by default
+  * Remove `VVV_min/max` in favor of `SDL_min/max`
+  * Rename stretch mode to scaling mode internally
+  * Move `filterSubrect` off of `Screen`
+  * Fix char overflow in Analogue Mode
+  * Extern `gameScreen`, remove `screenbuffer`
+  * De-C++-ify `struct ScreenSettings`
+  * Explicitly zero declared `struct ScreenSettings`s
+  * Remove `noBlend` argument from `LoadImage`
+  * Remove `noAlpha` argument from `LoadImage`
+  * Use `LoadImage` in `LoadIcon`
+  * Add forced fullscreen mode
+  * Add and use scaling mode enum
+  * Default to integer scaling mode
+  * De-duplicate finalmode glitchname printing
+  * Optimization: Don't outline if room name BG opaque
+  * Don't use function pointer to print room name
+  * Update TinyXML2 to 9.0.0
+  * Update LodePNG to 20220109
+  * Remove VSync toggle ifdefs
+  * Remove `SDL_GetTicks64()` ifdefs
+  * Remove temporary SDL fallthrough
+  * Remove `clamp` in favor of `SDL_clamp`
+  * Update `README.md` to refer to SDL 2.0.20
+  * Update `Dockerfile` to SDL 2.0.20
+  * Update CI to CentOS container with SDL 2.0.20
+  * Windows CI build: Ditch vcpkg
+  * Revert "Fix Secret Lab Time Trial trophies having wrong colors"
+  * Allow spaces and capitals in script names when loading
+  * Add Yussur Mustafa Oraji (N00byKing) to contributors list
+  * Make `basePath` and `pathSep` global variables
+  * Refactor `Screen.cpp` to use named constants
+  * `GetWindowSize`: Initialize out values if `GetRendererOutput` fails
+  * Explicitly prevent writing to saves if filesystem is not init
+  * Prevent writing stats/settings if they're not loaded
+  * Migrate LodePNG to submodule
+  * Migrate PhysFS to submodule
+  * Migrate TinyXML2 to submodule
+  * Migrate UTF-CPP to submodule
+  * Tell CI to clone submodules
+  * `cleanup`: Don't `savestatsandsettings` if filesystem not init
+  * CMake: Don't use regex if unneeded
+  * CMake: Add workaround for setting `-std=` below 3.1.3
+  * Up the standard to C99
+  * Move `-std=` flags to before `-fno-rtti`/`-fno-exceptions`
+  * Clean up and harden music loading code
+  * CI: Use new container without SDL_mixer
+  * Remove `.data.zip` assets
+  * Load zips using real dir instead of filename
+  * `SoundTrack::Init`: Remove unused `audio_channels` arg
+  * Fix a rare chance that finalstretch displays glitchy cycle (color 7)
+  * Unify drawing room name on map menus into one function
+  * Enumify all fade modes
+  * Add a missing `break;`
+  * Update SDL version to 2.0.22
+  * Improve vlog statements when `PHYSFS_openRead` fails
+  * Fix potential NULL dereference of `images[t]`
+  * Update FAudio, PhysFS, and TinyXML2 submodules
+  * Add `-version` command-line argument
+  * Move `SDL_ShowWindow` to after assets are loaded
+  * Don't treat spikes as solid for non-humanoid entities
+  * Explicitly initialize `SoundTrack::volume`
+  * Add `/MT` flag for MSVC
+  * Remove "Lots" and "???" from `number_words`
+  * Fix warning: use of non-static data member initialization
+  * Add debug statements to print xoshiro RNG values
+  * Clear level stats vector before loading them into the vector
+  * Fix `special/stdin.vvvvvv` being saved to `levelstats.vvv`
+  * Only process `tapleft`/`tapright` if `has_control`
+  * De-duplicate list of static libraries and flags applied to all libraries
+  * Add FAudio to `BUNDLE_DEPENDENCIES` option description
+  * Disable FAudio debug configuration in Release mode
+  * Add `REMOVE_ABSOLUTE_PATHS` CMake option
+  * Update to SDL 2.24.0
+  * Update SDL to 2.24.0 in Windows CI
+  * Remove use of `add_definitions`
+  * Optimize recompilation from changing commit hash
+  * De-duplicate release version
+  * Add commit hash & date to `-version` flag output
+  * Remove attempt to autoenable color output on Win32
+  * Define `WIN32_LEAN_AND_MEAN` when including `windows.h`
+  * `vlog_init`: Fix brace style
+  * Remove return values from `vlog_*` functions
+  * Update third-party submodules [2022-09-01]
+  * Update FAudio to 22.09.01
+  * Fix up style in `_Mix_ParseTime`
+  * Fix up style in `parseComments`
+  * Check for `SDL_strdup` failure in `parseComments`
+  * Ignore comments of tracks with a negative loop comment
+  * Move `xoshiro_seed` debug print to top
+  * Seed with frame counter instead of `SDL_GetTicks`
+  * Fix indentation style of `#define`s in `Vlogging.c`
+  * Add `-console` option on Windows
+  * Separate color being supported from being enabled
+  * Add error checks to `freopen` calls on Windows
+  * Add color support to Windows console output, properly
+  * Add fraZ0R to the list of contributors
+  * Clean up the code style of `generatecustomminimap`
+  * Unify all queries to map size to `map.getwidth` and `map.getheight`
+  * Don't set legends if out of bounds
+  * Replace all free calls with `VVV_free[func]`
+  * Make room names own their own memory
+  * Remove unnecessary `const`s from `Entity.h`
+  * Retype `dr` to be int instead of float
+  * Retype `testwallsy`'s `tx` and `ty` to be ints, not floats
+  * Unexport `gridmatch`
+  * Unexport `yline`
+  * Unexport `getgridpoint`
+  * Add Unreachable.h
+  * Reset savex, savey, and savegc in hardreset
+  * Refactor scriptclass::startgamemode
+  * Add debug print to unlockAchievement
+  * Always destroy and create new player in startgamemode
+  * Axe scriptclass::resetgametomenu
+  * Use _SDL_HAS_BUILTIN
+  * Make Catalan language files not executable
+  * De-duplicate room tile drawing code in editor
+  * Fix up temporary variables being in topmost scope and bad style
+  * Use SDL_Color for colors instead of colourTransform
+  * Axe Graphics::ct and Graphics::setcolreal
+  * Use SDL_GetRGBA and SDL_MapRGBA to read and draw pixels
+  * Move warpfcol, warpbcol, and warprect off of Graphics
+  * Use named constants in Graphics::create_buffers
+  * Rename tempBuffer to menuoffbuffer
+  * Refactor BlitSurfaceColoured and BlitSurfaceTinted to not allocate
+  * Re-add temporary allocation in BlitSurfaceTransform
+  * Allocate to the size of source surface instead
+  * Add branch name to interim version information
+  * Default width and height settings to 640x480
+  * Add branch name to window title in brackets
+  * Fix alphabetical ordering of includes in `preloader.cpp`
+  * Use `SDL_Point` instead of rolling our own `point` struct
+  * Set minimum window size (to 320 x 240)
+  * Abort and print error if window/renderer cannot be created
+  * Prioritize loading processed script names
+  * Add build type to `-version`
+  * Silence warnings about using `long long` in C++03
+  * Silence various warnings in builds removing content
+  * `static`-qualify `mount_pre_datazip`
+  * Remove x-position from `setactivityposition`
+  * Add `-addresses` command-line argument
+  * Draw text outline on editor hotkeys
+  * Fix editor selection box not showing up
+  * Add iliana etaoin to contributor list
+  * Add Jules de Sartiges to `Credits.h`
+  * Update `BUNDLE_DEPENDENCIES` description with removal of UTF-CPP
+  * Remove trailing whitespace in `create_buffers`
+  * Rename `tempTexture` to `menuoffTexture`
+  * Destroy towerbg and titlebg textures in `destroy_buffers`
+  * Destroy `gameScreen` after all other graphics are destroyed
+  * Don't draw texture onto itself for scrolling
+  * Fix analogue filter allocating/freeing surfaces every frame
+  * Remove reference from `customlevelclass::load` arg
+  * Always add null terminator when loading files
+  * Style: Fixup instances of `void` arguments
+  * Fix music playing wrong if played after track of different format
+  * Fix loading sounds with non-16 bit depths
+  * Add sample rate mismatch check to sound effects
+  * Use `VVV_freefunc` to call `stb_vorbis_close`
+  * Add support for sound OGG files
+  * Evaluate flipping eligibility per-entity
+  * Remove dialogue and cutscene bars if disabling completestop
+  * Add length check to OGG check
+  * Rename `menuoffTexture` to `tempShakeTexture`
+  * Always update scaling before rendering
+  * Persist windowed mode size through fullscreen mode
+  * Store display index of window to settings
+  * Sync language files after #944 merged
+  * Don't use `FAudioVoice_GetVoiceDetails`
+  * Copy rest of music code to OGG sound effects
+  * Fix gray entities applying in main game
+  * Separate CustomEntity global positions internally
+  * Whiten texture only after loading surface
+  * Fix nice fade variables persisting when they shouldn't
+  * Sync language files after merging #963
+  * Fix regression with music fade transitions not working
+  * Update lerp positions during VVVVVV-Man transforms
+  * Fix regression with controller binds on first launch
+  * Remove UTF8-CPP from non-bundled dependencies
+  * Handle cases where less bytes are read than expected
+  * Print binary blob check fails and remove EOF check
+  * Remove bogus warning if CLI playtesting zip level
+  * Fix regression: Editing script disables mute buttons
+  * Set TITLEMODE if loading level results in error
+  * Use setLevelDirError for level not found & parse errors
+  * Use quittomenu in gotoerrorloadinglevel
+  * Set custommode and custommodeforreal before loading level
+  * Use levelDirError for graphics errors too
+  * Defer hardreset to end of frame in quittomenu
+  * Prevent other cases of losing unsaved levels by returning to menu
+  * Allow quitting to menu if gamestate is EDITORMODE
+  * Call savestatsandsettings after unlocking MotU
+  * Fix bug: Playing music during Game Over screen
+  * Fix bug: Unable to skip credits in certain cases
+  * Prevent deleting saves in special or customs
+  * Show skip prompt during credits and ending picture
+  * Remove unneeded play()s in intermission menu
+  * Use enums for music tracks
+  * Use enums for sound effects
+  * Initialize currentsong to -1
+  * Correct orientation of Game Saved clock in Flip Mode
+  * Use enums for swngame
+  * Use enums for unlock, unlocknotify, unlocknum
+  * Use enums for time trial indexes
+  * Fix macOS not liking unconsequential fallthroughs
+  * Fix regression: Showing teles in customloadquick
+  * Implement haltedsong
+  * CLI: Allow no music to be played if save pos used
+  * PR template: Add note on translations
+  * Generalize stretch mode mouse scaling fix
+  * Re-add main menu credits button in M&P
+  * Remove trailing whitespace in `textboxcommsrelay`
+  * Fix regression: Linear filter persistence
+  * Axe VSync hint in favor of SDL_RenderSetVSync
+  * Android: Add `README.md`
+  * vlog: Slim `SDL.h` include down to `SDL_log.h`
+  * Android: README: Fix swapped h1/h2 headers
+  * Clarify references to Make and Play in README
+  * Provide error code if SetConsoleOutputCP fails
+  * Fix memory leak with ApplyFilter
+  * CMake: Silence deprecation warning
+  * Android: Update `README.md` for Maven package
+  * Fix regression: Warp BG lerps in reverse direction
+  * README: Delete section on compiler quirks
+  * Name conditionals in text box loop
+  * Add inbounds pixel assertion to DrawPixel/ReadPixel
+  * Fix loading plain font.png Unicode indexing out of bounds
+  * Add a fast-forward keybind to level debugger
+  * Fix regression: Tower BG lerps in reverse direction
+  * Add SimpleMessageBox for early filesystem bail
+  * README: Reword to "Viki", wordwrap line
+  * Fix TAB bind conflict with translator & debugger
+  * Fix clash between timer and return editor text
+  * Fix clash between Gravitron start text and timer
+  * Disable debugger logic when not active
+  * Only trigger CI workflows for code or CI changes
+  * Indicate modes when loading in to gameplay
+  * CWrappers.cpp: Extern "C"
+  * Remap lang reload keybind from F12 to F8
+  * Add support for internal screenshots
+  * Hook Steam screenshots and send internal capture
+  * Fix screenshots in Flip Mode
+  * Upscale screenshots 2x
+  * Add border to indicate taking screenshot
+  * Save screenshots with proper filenames
+  * Place GraphicsResources functions in header file
+  * Fix visual clash between timer and trophy text
+  * Make sure mode text is visible above act prompts
+  * Allow taking multiple screenshots in same second
+  * Account for position of prompt in mode text
+  * Fade text box overlays with text box
+  * Modulate text sprite RGB instead of using alpha
+  * Arabic: Fix translation for Vertigo roomname
+  * Allow using W and S in editor menus
+  * Reverse left & right nav keys in editor for RTL
+  * Add third_party/ to CI workflow paths
+  * Update FAudio to 24.01
+  * Add bounds check to textcase() command
+  * Fix pressing ESC in some menus not playing music
+  * Don't draw mode indicator text if there is none
+  * Disable typing pipes in script names
+  * Fix delayed notification of NDM unlock
+  * Disable typing pipes in script names
+  * Fix warnings when calculating image color
+  * Bump version to 2.4.1
+  * Remove number translations that are numerals
+  * Japanese: Fix wrong abbreviation period in credit
+  * Fix segfault: unwordwrap string w/ 2 start `\n`s
+  * README: Add step for compiling
+  * PR template: Clarify compensation
+  * Allow overriding state lock in glitchrunner <= 2.2
+  * Fix using int for mode indicator flags
+  * Properly fix setfont/setrtl in between text boxes
+  * Remove 'all' argument from setrtl
+  * Remove trailing whitespace on getlinegap decl
+  * Add bounds check to setlinegap
+  * Save textbox state, allow lang switches w/ textbox
+  * Fix translating text box ignoring line limit
+  * Save text box centering state
+  * Save special text box state using functions
+  * Split textwraps, move more textboxes to new system
+  * Recompute text boxes in Flip Mode
+  * Save context of untranslated text boxes
+  * Transfer adjust call to applyposition
+  * Remove unnecessary calls to resize()
+  * Move Comms Relay text boxes to new system
+  * Add assert for giving func if it won't be used
+  * Add textbox indexes, update trinket/crew textboxes
+  * Move Game Complete sequence to new text box system
+  * Move all other text boxes to new system
+  * Call resize() before formatting text in cutscene
+  * Add debug keybind CTRL+(SHIFT)+F8 to cycle lang
+  * Store original position of text box
+  * Remove textboxwrap() and wrap() return value
+  * Recompute textboxes on active input device change
+  * Reset textcase in speak/speak_active
+  * Translate menu options on-the-fly
+  * Translate NDM hardest room on-the-fly
+  * Disable switching languages during cutscene tests
+  * Fix limits check not updating with CTRL+F8
+  * Translate level title and creator on-the-fly
+  * Fix cycling menus in editor not updating
+  * Translate editor prompt text on-the-fly
+  * Translate editor notes on-the-fly
+  * Revert "Translate editor notes on-the-fly"
+  * Fix resize-to-nearest could be larger than desktop
+  * Fix copy-paste error in customposition
+  * Fix UB from out-of-range <stretch>
+  * Bump version to 2.4.2
+  * Fix "Thanks for playing!" reversed in Flip Mode
+  * Disable state locking if inc'ing state w/ ACTION
+  * Fix regression: Foreground redraw after G keybind
+  * Fix info args not working with -console
+  * Unload zips before loading zips
+  * Fix regression: Overzealous emitter dupe fix
+  * Fix regression: Entities not moving
+  * Fix wrong comment on disabling MSVC exceptions
+  * Fix double error dialog if data.zip is missing
+  * CMake: Scope C99/C++98 flags to VVVVVV only
+  * Add -std=c99 for C-Hashmap and FAudio
+  * Always have interim version indicators
+  * Style: Lowercase commands in `version.cmake`
+  * Use add_custom_command over add_custom_target
+  * Use variable timestep for `SDL_Delay`
+  * Fix regression: Escape from conveyor spikes
+  * Bump version to v2.5
+  * Give MotU trophy in normal mode
+  * Remove slowdown during death animation
+  * Refactor: Use fullmap() everywhere
+
+  [ AlexApps99 ]
+  * Fixes #112: Backbuffer is always 32bpp
+  * Update dependencies
+
+  [ Pierre-Alain TORET ]
+  * Fix build on DragonFlyBSD
+
+  [ Matt Aaldenberg ]
+  * Per-level custom asset loading functionality (#262)
+
+  [ Fussmatte ]
+  * Changed my name from Stelpjo to my current name, Fußmatte I also left a note for the in-game credits list to change the "ss" to an eszett when the Unicode font is implemented.
+  * Fixed some custom asset bugs, added .zip level loading Main game would retain custom level assets, now fixed. Also, custom fonts load properly. Finally, levels can be stored as a zip and placed in the levels folder, with the .vvvvvv file at the root of the zip and custom asset folders (graphics, sounds etc) also at the root.
+  * Fixed a few vector initialisation errors
+  * Removed another stray line
+  * Fix minor visual issue in int1yellow_5 Originally the changedir command was used here, making Vitellary look left and then immediately snap back to looking right. Now the changeai command is used instead to make him actually look left, and then look back to the right on his last textbox.
+  * Update Esperanto translation
+
+  [ tzann ]
+  * Add check for singular trinkets and crewmates in NDM game over screen
+  * Fix the 'Game Complete' trophy stand so it no longer hovers above the ground. Also update comments in Otherlevel.cpp to reflect what entities are actually being created.
+  * Also change oldyp so there's no deltaframe issues
+  * Change back the order of entity creation
+  * Added myself to contributors list
+  * Fix checkpoint starts in editor
+
+  [ Tynan Richards ]
+  * Wrap entities (#408)
+
+  [ Nichole Mattera ]
+  * Fixed controllers not being able to navigate the map and menu with up and down buttons.
+  * Added ability to bind restart to a controller.
+  * Missed adding the option to the createmenu method.
+  * Fix issues with hotkey during text inputs.
+  * Adding myself as a contributor.
+  * Simplified the fixes.
+  * Fixed the title screen showing up when going to graphics options while playtesting.
+
+  [ MAO3J1m0Op ]
+  * Add space after lines terminated by a colon in scripts (#479)
+
+  [ Ally ]
+  * Fix entities in the Warp Zone's gray tileset not being gray in the editor (#480)
+  * Refactor colors in internal commands
+  * Add `setactivityposition(x,y)`, add new textbox color `transparent` (#847)
+  * Apply suggestions from code review
+  * Apply suggestions from code review
+  * Apply suggestions from code review
+  * Fix accidental replacement
+  * Update desktop_version/src/Game.cpp
+  * Apply suggestions from code review
+  * Add suggestions from style pass
+  * Apply review suggestion from InfoTeddy
+  * Re-add `fixed` bool
+  * Fix issues
+  * Update desktop_version/src/Graphics.cpp
+  * Convert entity `type`s to an enum (#1007)
+
+  [ Vittorio Romeo ]
+  * Fix '-Wpedantic' warnings under gcc 10.x
+
+  [ Malte Desktop ]
+  * Fix music stopping when restarting a time trial
+  * Add to contributors
+
+  [ striker.sh ]
+  * Support for OpenBSD
+
+  [ treacherousfiend ]
+  * Update project generation snippet
+
+  [ lsaa ]
+  * Add in-game timer option (#790)
+
+  [ Reese Rivers ]
+  * Update CONTRIBUTORS.txt
+  * Update Credits.h
+  * Added missing strings for Esperanto
+  * Changed instances of "pasejo" to "pasaĵo"
+  * Adjusted some more roomnames
+  * Update Esperanto language files for new strings
+  * Fixed minor translation regression for Esperanto
+  * Update Esperanto strings to latest version (100%)
+  * Update Space Station font to latest version
+  * Changed timing of textsprites in transparent textboxes Textsprites and textimages no longer wait for the opacity value in order to display within transparent textboxes. Text sprites in normal opaque textboxes are not affected by this change.
+  * Fixed duplicated/shifted characters
+  * Initial implementation of localisation credits
+  * Update "It's Not Easy Being Green" Esperanto roomname translation
+  * Translated missing strings into Esperanto This includes the Spanish variant names, "Editing and LQA", the "mode enabled" bug text, and the debug mode freeze prompts.
+  * Tweak one word in the Esperanto localisation
+
+  [ mothbeanie ]
+  * Standardize punctuation and style for the new options menu
+  * Add translingual map legend characters to font
+  * Add translingual map legend code + border8
+  * remove tile_offset (no longer used)
+  * PR_BOR8 -> PR_FULLBOR, border8 -> full_border
+  * decrease map cursor margin on smaller map sizes
+  * Revert text image fading
+  * fix music ear blast bug
+  * Add mapexplored(), mapreveal() commands
+  * Update region system to current codebase due to PR rot
+  * Apply PR review changes
+  * Region system PR review changes
+  * Fix coordinates being allowed in the wrong order
+  * fix flipped inequality sign
+  * fix flipped inequality sign
+  * introduce functions to modulate user volume
+  * :3
+  * musicVolume -> controlVolume for clarity
+  *  Crew screen tweaks for custom levels.
+
+  [ N00byKing ]
+  * Build out-of-tree in workflows
+  * Port to FAudio
+  * Fix music changes between areas
+  * Fix semi random volume jumps
+
+  [ Yussur Mustafa Oraji ]
+  * Update VS2019 to VS2022
+
+  [ fraZ0R ]
+  * Actually fix #913 oops
+
+  [ iliana etaoin ]
+  * Add magic string to the start of the `game` global
+
+  [ Dav999 ]
+  * Update Portuguese (BR) language files
+  * Update Italian language files
+  * Add |upper to Italian number strings
+  * Adapt font size as needed for "Credits" title in rolling credits
+  * Update Dutch language files for new strings
+  * Add section on editing existing strings to README-programmers.txt
+  * Fix setactivityposition still taking two arguments
+  * Update Catalan language files to more recent version
+  * Reword "we forgot to print an error message" error message
+  * Add Ukrainian language files
+  * Update Dutch language files to latest version (100%)
+  * Re-add chars 0x00 - 0x1F to the font
+  * Add Welsh language files
+  * Add warning to volunteer translators to README-translators.txt
+  * Made technical fixes to several translations
+  * Accommodate for some limit breaks in Welsh
+  * Update Catalan language files to latest version (100%)
+  * Add Simplified Chinese font
+  * Add Simplified Chinese language files
+  * Fix various CJK positioning problems
+  * Make some minor improvements to Dutch translation
+  * Fix iflang, loadtext and setfont not working with uppercase
+  * Add Irish translation
+  * Update Chinese with new strings
+  * Fix "+1 Rank!" possibly overlapping with time trial time in CJK font
+  * Update c-hashmap submodule [2023-08-02]
+  * Apply changes to Irish language files (mainly roomnames)
+  * Change editor unsupported message to only appear when editor is selected
+  * Fix setfont() changing font of fading out text boxes
+  * Add limits check to roomnames and roomnames_special
+  * Fix double return when pressing Esc in editor font menu
+  * Sync language files
+  * Add Korean font (10x10)
+  * Add Korean language files
+  * Update German translation to near-latest strings (99.9%), fix issues
+  * Update Russian translation to near-latest strings (99.9%)
+  * Update Spanish to near-latest strings (99.9%), fix activity zones
+  * Update Welsh translation to near-latest strings (99.9%), fix issues
+  * Add Japanese font (8x12)
+  * Apply Japanese font edits by KabanFriends
+  * Add Japanese language files
+  * Update Brazilian Portuguese translation to near-latest strings (99.9%)
+  * Add Traditional Chinese language files
+  * Update Esperanto and Dutch translations to latest strings (100%)
+  * Update Esperanto language files
+  * Update Ukrainian translation to near-latest strings (99.9%)
+  * Update European Portuguese to near-latest strings (99.9%), fix issues
+  * Update Italian translation to near-latest strings (99.9%)
+  * Reference both cases for "Complete the game" in code
+  * Update Turkish translation to near-latest strings (99.9%)
+  * Add edits to Japanese translation by KabanFriends
+  * Add Polish language files
+  * Apply consistency fix to "FINAL LEVEL MASTERED" in Japanese
+  * Sync Polish strings.xml, fix small space issue
+  * Fix "no language files found" title screen bug
+  * Add warning messages for missing fonts/lang folders
+  * Make activity zone prompts loc::gettext'ed at display time
+  * Prevent changing language if a textbox is displayed
+  * Fix possible title screen from in-game if command-line playtesting
+  * Update French to near-latest strings (99.9%), fix issues
+  * Sync new string from #1002 into languages added by #989
+  * Make "{n_crew|wordy} crewmates remain" string wordwrap
+  * Raise limits on three strings in translation files
+  * Add Silesian language files
+  * Bring Catalan, Dutch and Esperanto language files 100% up-to-date again
+  * Improve some Dutch menu strings
+  * Apply latest fixes to some Turkish strings
+  * Apply updates to Polish and Silesian
+  * Add missing string in Japanese
+  * Apply updates to Polish and Silesian room names
+  * Show centiseconds for best time trial times (if available)
+  * Allow UTF-8 console output on Windows (for -console)
+  * Update my GitHub username and Ved repo link
+  * Add "English sprites" setting
+  * Add support for translatable sprites
+  * Add Dutch translated sprites
+  * Update README-translators.txt with info about sprites translation
+  * Fix %cs showing instead of commit date on Windows (or older git?)
+  * Remove game.customquicksummary
+  * Simplify mapclass::currentarea()
+  * Move `struct Summary` from Game.cpp to Game.h
+  * Change savex and savey in struct Summary to saverx and savery
+  * Remove finalmode from struct Summary
+  * Remove double NULL check in loadthissummary()
+  * Replace std::string Game::telesummary and Game::quicksummary by Summary
+  * Get rid of Game::savearea (std::string)
+  * Remove more tele/quick variables duplicating info in struct Summary
+  * Change saved <summary> tag back to English
+  * Game::loadcustomlevelstats: move some declarations to later in function
+  * Change levelstats data type from vector to map
+  * Translate hardest room at display time instead of at time of death
+  * Final strings for Esperanto (credits part)
+  * Fix position of crewmate in "You have rescued a crew member!" box
+  * Apply changes to two terminal textboxes in Japanese
+  * Add spaces at the end of "TEMPS :" string (and MORTS and BLINGS)
+  * Fix remaining audio speedup/slowdown bug
+  * Japanese: apply change from 凄い to すごい
+  * Italian: Fix in-game timer ON/OFF being reversed
+  * Correct one letter's capitalization in German
+  * Fix "he'd be a a big help" typo
+  * Polish: Change roomname Ostrzeżenie to Przestroga
+  * Fix ACCIÓN having changed to ACTION in Spanish
+  * Fix centering of game complete texts if level font != interface font
+  * Restore correct LIES/TRUTH for Korean
+  * Make some minor refinements to Dutch translation
+  * Fix binding menu allowing you to lock yourself out of the game
+  * Make language sync support creating blank language files
+  * Clarify translators and programmers READMEs
+  * Load plain font.png beyond U+007F
+  * Fix translator credits headers being forced to 8x8 font
+  * Fix current_credits_list_index not always being reset
+  * Try to prevent some lines in rolling credits going offscreen
+  * Add limits to the translator credits strings
+  * Minor indentation style fix in Render.cpp
+  * Restore gravity/warp lines sticking out a tile offscreen
+  * Fix minor [Press ACTION to save your game] overflow in Turkish
+  * Fix minor [Press ACTION to save your game] overflow in German
+  * Enable SDL_HINT_IME_SHOW_UI to make typing CJK not guesswork
+  * Add a system for selecting between wordy/wordy2
+  * Remove hair spaces from Japanese translation
+  * Add SheenBidi submodule
+  * Add SheenBidi to CMakeLists
+  * Implement bidi reordering at display time
+  * Add Arabic reshaping lookup table
+  * Add support for Arabic reshaping
+  * Add Arabic font
+  * Add Arabic ligature support
+  * Implement bidi_should_transform()
+  * Hide unicode directional control characters
+  * Add RTL language property
+  * Add RTL level property and print flag
+  * Add setrtl(on/off) scripting command
+  * Add font::is_rtl(uint32_t flags)
+  * Right-align textboxes in RTL languages
+  * Add PR_RTL_XFLIP print flag
+  * Add PR_RTL_XFLIP to some important places
+  * Make left/right key input correct for RTL menus
+  * Base text box padding/centering on font width instead of codepoints
+  * Fix orientation of levels list
+  * XFLIP analog stick sensitivity slider properly
+  * Mirror time trial results screen
+  * Flip Game Complete screen
+  * Don't pass newline characters to bidi algorithm
+  * XFLIP LOADING... screen
+  * XFLIP cursor in roomname translator mode
+  * Ignore directional control chars in font::len()
+  * Swap definitions of left and right textbox padding
+  * XFLIP prompts in the editor
+  * Inverse centered text screen border for RTL
+  * Update README-translators.txt for some recent additions
+  * Add support for right-aligned roomtext
+  * Use wordy2 in Dutch to capitalize één as Eén
+  * Update Arabic font
+  * Add Arabic language files
+  * Revert "Disable typing pipes in script names"
+  * Move author face to the right for RTL languages
+  * Last update to Arabic font
+  * Replace U+2013 (–) by standard dash in Ukrainian
+  * Replace Chinese font
+  * Replace [Press {button} to toggle gameplay] by freeze/unfreeze
+  * Sync language files
+  * Add in-game mode indications (#1096) to language files
+  * Translate new strings to Dutch
+  * Clean up outdated strings
+  * Fix Esperanto [button?] in Violet cutscene
+  * Fix a few spacing problems in Welsh
+  * Add missing blank lines in Irish congrats boxes
+  * Rename capitalized no death mode in Dutch
+  * Apply updates to Arabic language files
+  * Sync Spanish LATAM and Spanish ARG language files
+  * Translate the current 4 proxy strings into Dutch
+  * Add missing spaces to script editor title in Welsh
+  * Fix placeholders in Arabic strings_plural
+  * Change LATAM Spanish meta.xml Oprime to Pulsa
+  * Align stability generator in es_419 and es_AR
+  * Make language screen show up once more
+  * Only re-show language screen in default basedir
+  * Change `reply` scripting command to `player` color
+  * Fix font::print_wrap() name in README-programmers
+  * Add buffer for IME editing events
+  * Add IME text rendering
+  * Add selection background to IME rendering
+  * Tweak IME selection background left bound
+  * Fix squeak and save spam in gamepad menu
+  * Change name of Silesian option by request of translator
+  * Change name of Silesian option (part 2)
+  * Add files for Persian localization
+  * Add Persian to credits screen
+  * Sync language files
+  * Fix save summary sometimes getting misordered in Arabic
+  * Add new strings for Persian
+  * Update name of Arabic/Persian font
+  * Add confirmation and removal to bindings menu
+  * Add check for converting negative SDL_GameControllerButton to glyph
+  * Sync new gamepad strings into all language files
+  * Apply translations for 2.4 strings
+  * Apply translations for 2.5 strings
+  * Update SheenBidi to 2.9.0
+  * Fix vertical position of Comms Relay textbox
+
+  [ Colin Caine ]
+  * Update link to FamilyJules'
+
+  [ David Galiev ]
+  * Fix some Russian strings
+  * Fix Russian translation for Pushing Onwards editor string
+  * Add Russian translations for jukebox songs in the "NEXT UNLOCK" section
+
+  [ Space-G ]
+  * Fixes a handful of pt_BR mistranslations
+  * Fixes some pt_BR mistranslations noted by zaratustra on Cohost
+
+  [ sndream ]
+  * Simplified Chinese graphics fine-tuning
+
+  [ Alberto Mardegan ]
+  * Fix loading of PNG resources on big-endian machines
+  * Update to latest FAudio
+
+  [ KabanFriends ]
+  * Don't use wordy for numbers
+  * Add missing string translations
+  * Fix translator credit
+  * Fix typo for Bilinear
+  * Improve translation for Down Under
+  * Add translation for "Editing and LQA"
+
+  [ NyakoFox ]
+  * Add /utf-8 to MVSC
+  * Add MSVC version check
+  * Add enemy speed as a room property
+  * Checkpoint autosaving
+  * add menu option for checkpoint saving
+  * Fix menu option, show textbox when save failed
+  * Abstract checkpoint saving to its own function
+  * Add more checks for checkpoint saving
+  * Add position(force)
+  * Add textoutline(on/off/default)
+  * position(force) -> position(absolute)
+  * Make 0-length gravity lines invisible again
+  * Remove extra unnecessary palettes
+  * Add player colour as a level property
+  * Attempt to fix external playtesting not respecting colour
+  * Move saving outside of MetaData (oops!)
+  * Replace colour IDs with an enum
+  * Fix "invalid" activity zones not spawning
+  * Fix the campaign trinket count missing from stats
+  * Fix #1223 (analogue mode segfault)
+  * Fix uncommon division-by-zero
+  * Fix mouse coordinates being wrong on HiDPI displays
+
+  [ Nate Eagleson ]
+  * Fix typo in README.md
+
+  [ David Fisher ]
+  * feat(ci): Enhance GitHub Actions workflow
+
+  [ tiff ]
+  * Add download link if data.zip is missing
+
+  [ Marcella Houston ]
+  * Added sound(x), simplified version of playef(x)
+
+ -- computermouth <computermouth@proton.me>  Mon, 29 Sep 2025 18:32:00 -0500
