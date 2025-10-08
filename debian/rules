@@ -5,7 +5,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 build:
 	git submodule update --init
 	mkdir -p desktop_version/build
-	cd desktop_version/build && cmake ..
+	cd desktop_version/build && cmake -DBUNDLE_DEPENDENCIES=OFF ..
 	cd desktop_version/build && make
 
 %:

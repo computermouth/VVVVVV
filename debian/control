@@ -7,7 +7,7 @@ Homepage: https://github.com/terrycavanagh/vvvvvv
 Vcs-Browser: https://salsa.debian.org/games-team/vvvvvv
 Vcs-Git: https://salsa.debian.org/games-team/vvvvvv.git
 Standards-Version: 4.7.2
-Build-Depends: debhelper-compat (= 13), cmake
+Build-Depends: debhelper-compat (= 13), cmake, libsdl2-dev, libtinyxml2-dev, libphysfs-dev, libfaudio-dev, liblodepng-dev
 
 Package: vvvvvv
 Architecture: any
