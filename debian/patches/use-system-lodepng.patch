@@ -51,34 +51,14 @@ index 26d191d4..74495bad 100644
  endif()
  
  
-diff --git a/desktop_version/src/GraphicsResources.cpp b/desktop_version/src/GraphicsResources.cpp
-index 8d13f8df..cf249e03 100644
---- a/desktop_version/src/GraphicsResources.cpp
-+++ b/desktop_version/src/GraphicsResources.cpp
-@@ -12,6 +12,9 @@
- #include "Screen.h"
- #include "XMLUtils.h"
- 
+diff --git a/desktop_version/src/lodepng_wrapper.c b/desktop_version/src/lodepng_wrapper.c
+index a2cbb9b3..d290296e 100644
+--- a/desktop_version/src/lodepng_wrapper.c
++++ b/desktop_version/src/lodepng_wrapper.c
+@@ -1,2 +1,6 @@
 +#ifdef SYSTEM_LODEPNG
 +#include <lodepng.h>
 +#else
- // Used to load PNG data
- extern "C"
- {
-@@ -31,6 +34,7 @@ extern "C"
-     );
-     extern const char* lodepng_error_text(unsigned code);
- }
-+#endif
- 
- static SDL_Surface* LoadImageRaw(const char* filename, unsigned char** data)
- {
-diff --git a/desktop_version/src/lodepng_wrapper.c b/desktop_version/src/lodepng_wrapper.c
-index a2cbb9b3..84eac816 100644
---- a/desktop_version/src/lodepng_wrapper.c
-+++ b/desktop_version/src/lodepng_wrapper.c
-@@ -1,2 +1,4 @@
-+#ifndef SYSTEM_LODEPNG
  /* Workaround for being unable to rename lodepng.cpp to lodepng.c */
  #include "../../third_party/lodepng/lodepng.cpp"
 +#endif
