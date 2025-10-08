@@ -6,7 +6,7 @@ build:
 	git submodule update --init
 	mkdir -p desktop_version/build
 	cd desktop_version/build && cmake -DBUNDLE_DEPENDENCIES=OFF ..
-	cd desktop_version/build && make
+	cd desktop_version/build && make -j16
 
 %:
 	dh $@
