@@ -1,12 +1,12 @@
 diff --git a/desktop_version/CMakeLists.txt b/desktop_version/CMakeLists.txt
-index 26d191d4..84ef47b4 100644
+index 26d191d4..090ac202 100644
 --- a/desktop_version/CMakeLists.txt
 +++ b/desktop_version/CMakeLists.txt
 @@ -240,6 +240,7 @@ if(APPLE)
      set(PFS_SRC ${PFS_SRC} ../third_party/physfs/src/physfs_platform_apple.m)
  endif()
  set(PNG_SRC src/lodepng_wrapper.c)
-+set(PNG_OPT -DLODEPNG_NO_COMPILE_ALLOCATORS -DLODEPNG_NO_COMPILE_DISK)
++set(PNG_DEF -DLODEPNG_NO_COMPILE_ALLOCATORS -DLODEPNG_NO_COMPILE_DISK)
  set(CHM_SRC ../third_party/c-hashmap/map.c)
  set(SBIDI_SRC ../third_party/SheenBidi/Source/SheenBidi.c)
  
